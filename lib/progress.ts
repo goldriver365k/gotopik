@@ -110,6 +110,13 @@ export function getCompletedStepsForLevel(level: number): number[] {
     .map((item) => item.step);
 }
 
+// True once the user has any real learning progress saved — used to avoid
+// showing first-time-only screens (e.g. Self Level) to existing users.
+export function hasExistingProgress(): boolean {
+  const progress = getProgress();
+  return progress.currentLevel !== null || progress.completedSteps.length > 0;
+}
+
 export function getLevelProgressPercent(level: number, totalSteps: number): number {
   if (totalSteps <= 0) return 0;
   const completedCount = getCompletedStepsForLevel(level).length;

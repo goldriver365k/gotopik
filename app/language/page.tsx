@@ -8,6 +8,8 @@ import {
   LANGUAGE_OPTIONS,
   LEARNING_LANGUAGE_STORAGE_KEY,
 } from "@/lib/languages";
+import { getSavedSelfLevel } from "@/lib/selfLevel";
+import { hasExistingProgress } from "@/lib/progress";
 
 function getSavedLanguage(): string | null {
   if (typeof window === "undefined") return null;
@@ -21,7 +23,13 @@ export default function LanguagePage() {
   const handleContinue = () => {
     if (!selected) return;
     localStorage.setItem(LEARNING_LANGUAGE_STORAGE_KEY, selected);
-    router.push("/home");
+
+    // First-time users go on to Self Level next. Anyone who already picked a
+    // self level, or already has real learning progress, is an existing user
+    // (e.g. just changing their language from HOME/MY) — send them straight
+    // to HOME instead of forcing the new screen on them.
+    const isNewUser = !getSavedSelfLevel() && !hasExistingProgress();
+    router.push(isNewUser ? "/self-level" : "/home");
   };
 
   return (
