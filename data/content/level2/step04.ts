@@ -73,8 +73,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "제 방은 좁아요.",
     audioUrl: null,
     question: "방이 어때요?",
-    options: ["좁아요", "넓어요", "깨끗해요", "더러워요"],
-    correctAnswer: 0,
+    options: ["넓어요", "좁아요", "깨끗해요", "더러워요"],
+    correctAnswer: 1,
     translations: { en: { question: "How is the room?", explanation: 'The sentence says "my room is small," so the correct answer is 좁아요.' } },
   },
   {
@@ -102,16 +102,16 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S4-R01",
     passage: "제 방은 작아요.\n하지만 깨끗해요.",
     question: "이 사람의 방은 어때요?",
-    options: ["크고 더러워요", "넓고 더러워요", "작고 깨끗해요", "작고 더러워요"],
-    correctAnswer: 2,
+    options: ["작고 더러워요", "넓고 더러워요", "크고 더러워요", "작고 깨끗해요"],
+    correctAnswer: 3,
     translations: { en: { question: "How is this person's room?", explanation: 'The passage says "small but clean," so the correct answer is 작고 깨끗해요.' } },
   },
   {
     id: "L2-S4-R02",
     passage: "저는 다음 달에 이사해요.\n새 집은 지금 집보다 넓어요.",
     question: "새 집은 어때요?",
-    options: ["더 좁아요", "더러워요", "더 넓어요", "작아요"],
-    correctAnswer: 2,
+    options: ["더 좁아요", "더 넓어요", "더러워요", "작아요"],
+    correctAnswer: 1,
     translations: { en: { question: "How is the new house?", explanation: 'The passage says the new house is more spacious, so the correct answer is 더 넓어요.' } },
   },
   {
@@ -125,10 +125,10 @@ const READING: ReadingQuestionData[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L2-S4-P01", type: "vocabulary", question: '"거실"의 뜻은 무엇입니까?', options: ["Bathroom", "Kitchen", "Bedroom", "Living room"], correctAnswer: 3, explanation: { en: "거실 means living room." } },
-  { id: "L2-S4-P02", type: "vocabulary", question: '"정리하다"의 뜻은 무엇입니까?', options: ["To clean", "To build", "To move", "To organize"], correctAnswer: 3, explanation: { en: "정리하다 means to organize." } },
+  { id: "L2-S4-P01", type: "vocabulary", question: '"거실"의 뜻은 무엇입니까?', options: ["Bedroom", "Kitchen", "Living room", "Bathroom"], correctAnswer: 2, explanation: { en: "거실 means living room." } },
+  { id: "L2-S4-P02", type: "vocabulary", question: '"정리하다"의 뜻은 무엇입니까?', options: ["To organize", "To build", "To move", "To clean"], correctAnswer: 0, explanation: { en: "정리하다 means to organize." } },
   { id: "L2-S4-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n방을 청소___ 책을 읽어요.", options: ["아서", "지만", "고", "려고"], correctAnswer: 2, explanation: { en: "-고 connects two actions: 청소하고 읽어요." } },
-  { id: "L2-S4-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n냉장고 ______ 음식이 있어요.", options: ["위에", "옆에", "앞에", "안에"], correctAnswer: 3, explanation: { en: "안에 means inside: 냉장고 안에." } },
+  { id: "L2-S4-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n냉장고 ______ 음식이 있어요.", options: ["안에", "옆에", "앞에", "위에"], correctAnswer: 0, explanation: { en: "안에 means inside: 냉장고 안에." } },
   { id: "L2-S4-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n제 방은 ______.", options: ["더러워요", "넓어요", "깨끗해요", "좁아요"], correctAnswer: 3, explanation: { en: "좁아요 means small/narrow." } },
   { id: "L2-S4-P06", type: "sentence", question: "집이 깨끗하지 않을 때 쓰는 말은?", options: ["넓어요", "더러워요", "좁아요", "좋아요"], correctAnswer: 1, explanation: { en: "더러워요 means dirty." } },
   { id: "L2-S4-P07", type: "vocabulary", question: "이사할 때 필요한 것은?", options: ["요리", "청소", "이사 준비", "독서"], correctAnswer: 2, explanation: { en: "이사 준비 (moving preparation) is needed when moving." } },

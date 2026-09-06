@@ -67,8 +67,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 토요일에 친구를 만나요.",
     audioUrl: null,
     question: "언제 친구를 만납니까?",
-    options: ["금요일", "토요일", "일요일", "월요일"],
-    correctAnswer: 1,
+    options: ["금요일", "일요일", "토요일", "월요일"],
+    correctAnswer: 2,
     translations: { en: { question: "When do they meet their friend?", explanation: 'The sentence says "on Saturday," so the correct answer is 토요일.' } },
   },
   {
@@ -76,8 +76,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "약속은 세 시예요. 우리는 역 앞에서 만나요.",
     audioUrl: null,
     question: "어디에서 만납니까?",
-    options: ["학교", "역 앞", "식당", "집"],
-    correctAnswer: 1,
+    options: ["학교", "집", "식당", "역 앞"],
+    correctAnswer: 3,
     translations: { en: { question: "Where do they meet?", explanation: 'The sentence says "We meet in front of the station," so the answer is 역 앞.' } },
   },
 ];
@@ -95,8 +95,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S9-R02",
     passage: "저는 친구와 약속이 있어요.\n우리는 주말에 만나요.",
     question: "저는 언제 친구를 만납니까?",
-    options: ["평일", "주말", "오늘", "내일"],
-    correctAnswer: 1,
+    options: ["주말", "평일", "오늘", "내일"],
+    correctAnswer: 0,
     translations: { en: { question: "When do they meet their friend?", explanation: 'The passage says "we meet on the weekend," so the answer is 주말.' } },
   },
 ];

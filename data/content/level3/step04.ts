@@ -89,8 +89,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "버스는 지하철보다 느리지만 요금이 더 싸요. 저는 시간이 있어서 버스를 탈 거예요.",
     audioUrl: null,
     question: "이 사람은 왜 버스를 탈 겁니까?",
-    options: ["더 빨라서", "시간이 있어서", "지하철이 없어서", "친구와 같이 가서"],
-    correctAnswer: 1,
+    options: ["시간이 있어서", "더 빨라서", "지하철이 없어서", "친구와 같이 가서"],
+    correctAnswer: 0,
     translations: { en: { question: "Why will they take the bus?", explanation: 'The sentence says "I have time," so the correct answer is 시간이 있어서.' } },
   },
   {
@@ -110,8 +110,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "이 가게에는 가방 종류가 다양해요.\n가격이 싼 가방도 있고 비싼 가방도 있어요.\n비싼 가방은 품질이 더 좋아요.\n저는 가격과 품질을 비교한 후에 적당한 가방을 골랐어요.",
     question: "이 사람은 무엇을 기준으로 가방을 골랐습니까?",
-    options: ["디자인", "가격과 품질", "색깔", "브랜드"],
-    correctAnswer: 1,
+    options: ["브랜드", "디자인", "색깔", "가격과 품질"],
+    correctAnswer: 3,
     translations: { en: { question: "What standard did they use to choose the bag?", explanation: "The passage says they compared price and quality, so the correct answer is 가격과 품질." } },
   },
   {
@@ -119,8 +119,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "온라인 쇼핑과 매장 쇼핑은 각각 장점이 있어요.\n온라인 쇼핑은 편리하지만 물건을 직접 볼 수 없어요.\n매장 쇼핑은 조금 불편하지만 물건을 직접 확인할 수 있어요.",
     question: "매장 쇼핑의 장점은 무엇입니까?",
-    options: ["더 빨라요", "물건을 직접 확인할 수 있어요", "더 편리해요", "가격이 더 싸요"],
-    correctAnswer: 1,
+    options: ["더 빨라요", "더 편리해요", "물건을 직접 확인할 수 있어요", "가격이 더 싸요"],
+    correctAnswer: 2,
     translations: { en: { question: "What is the advantage of in-store shopping?", explanation: "The passage says you can check items directly, so the correct answer is 물건을 직접 확인할 수 있어요." } },
   },
   {
@@ -154,11 +154,11 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S4-P01", type: "vocabulary", question: '"장점"의 뜻은 무엇입니까?', options: ["Disadvantage", "Advantage", "Difference", "Standard"], correctAnswer: 1, explanation: { en: "장점 means advantage." } },
-  { id: "L3-S4-P02", type: "vocabulary", question: '"편리하다"의 뜻은 무엇입니까?', options: ["Inconvenient", "Convenient", "Similar", "Various"], correctAnswer: 1, explanation: { en: "편리하다 means convenient." } },
-  { id: "L3-S4-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이 세 가지 ______ 이게 제일 좋아요.", options: ["보다", "중에서", "때문에", "동안"], correctAnswer: 1, explanation: { en: "중에서 marks a group to choose from: 세 가지 중에서." } },
-  { id: "L3-S4-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n버스를 타는 것보다 지하철을 타는 것이 ______.", options: ["빨라야 해요", "빠를 거예요", "더 빨라요", "빠르지 마세요"], correctAnswer: 2, explanation: { en: "-는 것이 더 compares two actions: 타는 것이 더 빨라요." } },
-  { id: "L3-S4-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n이 제품은 저 제품보다 ______.", options: ["비슷해요", "품질이 좋아요", "선택해요", "고르고 있어요"], correctAnswer: 1, explanation: { en: "품질이 좋아요 (\"quality is good\") fits a comparison sentence." } },
+  { id: "L3-S4-P01", type: "vocabulary", question: '"장점"의 뜻은 무엇입니까?', options: ["Advantage", "Disadvantage", "Difference", "Standard"], correctAnswer: 0, explanation: { en: "장점 means advantage." } },
+  { id: "L3-S4-P02", type: "vocabulary", question: '"편리하다"의 뜻은 무엇입니까?', options: ["Convenient", "Inconvenient", "Similar", "Various"], correctAnswer: 0, explanation: { en: "편리하다 means convenient." } },
+  { id: "L3-S4-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이 세 가지 ______ 이게 제일 좋아요.", options: ["중에서", "보다", "때문에", "동안"], correctAnswer: 0, explanation: { en: "중에서 marks a group to choose from: 세 가지 중에서." } },
+  { id: "L3-S4-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n버스를 타는 것보다 지하철을 타는 것이 ______.", options: ["빨라야 해요", "빠를 거예요", "빠르지 마세요", "더 빨라요"], correctAnswer: 3, explanation: { en: "-는 것이 더 compares two actions: 타는 것이 더 빨라요." } },
+  { id: "L3-S4-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n이 제품은 저 제품보다 ______.", options: ["비슷해요", "고르고 있어요", "선택해요", "품질이 좋아요"], correctAnswer: 3, explanation: { en: "품질이 좋아요 (\"quality is good\") fits a comparison sentence." } },
   { id: "L3-S4-P06", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n저는 가격을 ______으로 물건을 골라요.", options: ["차이", "방법", "기준", "종류"], correctAnswer: 2, explanation: { en: "기준 means \"standard/criteria.\"" } },
   { id: "L3-S4-P07", type: "vocabulary", question: "두 물건이 많이 같을 때 쓰는 말은?", options: ["다르다", "비슷하다", "느리다", "적당하다"], correctAnswer: 1, explanation: { en: "비슷하다 means similar." } },
   { id: "L3-S4-P08", type: "listening", audioText: "이 가방이 더 편리해서 이걸로 골랐어요.", question: "왜 이 가방을 골랐습니까?", options: ["더 예뻐서", "더 싸서", "더 편리해서", "친구가 사줘서"], correctAnswer: 2, explanation: { en: 'The sentence says "more convenient," so the answer is 더 편리해서.' } },

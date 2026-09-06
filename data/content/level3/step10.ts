@@ -110,8 +110,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "저는 지난주에 유명한 관광지를 방문했어요.\n그곳은 자연 풍경이 아름다워서 사진을 찍기 좋았어요.\n전통 시장을 구경하면서 지역 음식도 먹었어요.\n정말 특별한 경험이어서 오래 기억에 남을 것 같아요.",
     question: "이 사람은 관광지에서 무엇을 하면서 지역 음식을 먹었습니까?",
-    options: ["전통 시장을 구경하면서", "박물관을 구경하면서", "산책하면서", "숙소에서 쉬면서"],
-    correctAnswer: 0,
+    options: ["숙소에서 쉬면서", "박물관을 구경하면서", "산책하면서", "전통 시장을 구경하면서"],
+    correctAnswer: 3,
     translations: { en: { question: "What were they doing when they ate local food?", explanation: "The passage says they looked around the traditional market, so the correct answer is 전통 시장을 구경하면서." } },
   },
   {
@@ -157,8 +157,8 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S10-P01", type: "vocabulary", question: '"경치"의 뜻은 무엇입니까?', options: ["View / scenery", "Museum", "Lodging", "Landmark"], correctAnswer: 0, explanation: { en: "경치 means view/scenery." } },
-  { id: "L3-S10-P02", type: "vocabulary", question: '"구경하다"의 뜻은 무엇입니까?', options: ["To stay", "To look around", "To recommend", "To enjoy"], correctAnswer: 1, explanation: { en: "구경하다 means to look around/sightsee." } },
+  { id: "L3-S10-P01", type: "vocabulary", question: '"경치"의 뜻은 무엇입니까?', options: ["Lodging", "Museum", "View / scenery", "Landmark"], correctAnswer: 2, explanation: { en: "경치 means view/scenery." } },
+  { id: "L3-S10-P02", type: "vocabulary", question: '"구경하다"의 뜻은 무엇입니까?', options: ["To stay", "To enjoy", "To recommend", "To look around"], correctAnswer: 3, explanation: { en: "구경하다 means to look around/sightsee." } },
   { id: "L3-S10-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n음악을 들______ 산책했어요.", options: ["으면서", "고 나서", "기 때문에", "는 동안이라서"], correctAnswer: 0, explanation: { en: "-(으)면서 shows two simultaneous actions: 들으면서." } },
   { id: "L3-S10-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이곳은 사진을 찍______.", options: ["기 좋아요", "는 동안이에요", "기 때문이에요", "고 나서예요"], correctAnswer: 0, explanation: { en: "-기 좋다 means \"good for doing\": 찍기 좋아요." } },
   { id: "L3-S10-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n이 지역은 자연 ______이 아름다워요.", options: ["명소", "풍경", "숙박", "여행객"], correctAnswer: 1, explanation: { en: "풍경 means landscape." } },

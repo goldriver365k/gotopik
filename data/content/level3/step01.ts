@@ -92,8 +92,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "숙제를 끝내고 나서 친구를 만났어요.",
     audioUrl: null,
     question: "숙제를 끝내고 나서 무엇을 했습니까?",
-    options: ["잠을 잤어요", "친구를 만났어요", "요리를 했어요", "책을 읽었어요"],
-    correctAnswer: 1,
+    options: ["친구를 만났어요", "잠을 잤어요", "요리를 했어요", "책을 읽었어요"],
+    correctAnswer: 0,
     translations: { en: { question: "What did they do after finishing homework?", explanation: 'The sentence says "then met my friend," so the correct answer is 친구를 만났어요.' } },
   },
   {
@@ -101,8 +101,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 작년에 처음 이 회사에 왔어요. 그리고 지금까지 일하고 있어요.",
     audioUrl: null,
     question: "이 사람은 언제 처음 이 회사에 왔습니까?",
-    options: ["올해", "작년", "지난주", "내년"],
-    correctAnswer: 1,
+    options: ["올해", "내년", "지난주", "작년"],
+    correctAnswer: 3,
     translations: { en: { question: "When did this person first come to this company?", explanation: 'The sentence says "last year," so the correct answer is 작년.' } },
   },
 ];
@@ -113,8 +113,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "저는 지난주에 처음 등산을 해 봤어요.\n정말 힘들었지만 재미있었어요.\n산 위에서 본 경치가 기억에 남아요.\n다음에 또 가고 싶어요.",
     question: "이 사람은 무엇을 처음 해 봤습니까?",
-    options: ["수영", "등산", "여행", "요리"],
-    correctAnswer: 1,
+    options: ["등산", "수영", "여행", "요리"],
+    correctAnswer: 0,
     translations: { en: { question: "What did this person try for the first time?", explanation: "The passage says they tried hiking for the first time, so the correct answer is 등산." } },
   },
   {
@@ -122,8 +122,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "저는 처음 한국 음식을 먹었을 때를 아직도 기억해요.\n너무 매워서 놀랐어요.\n하지만 지금은 매운 음식을 좋아해요.",
     question: "이 사람은 처음 한국 음식을 먹었을 때 어땠습니까?",
-    options: ["맛이 없었어요", "너무 싱거웠어요", "매워서 놀랐어요", "차가웠어요"],
-    correctAnswer: 2,
+    options: ["맛이 없었어요", "너무 싱거웠어요", "차가웠어요", "매워서 놀랐어요"],
+    correctAnswer: 3,
     translations: { en: { question: "How did they feel eating Korean food for the first time?", explanation: 'The passage says they were surprised because it was spicy, so the correct answer is 매워서 놀랐어요.' } },
   },
   {
@@ -156,13 +156,13 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S1-P01", type: "vocabulary", question: '"경험"의 뜻은 무엇입니까?', options: ["Memory", "Experience", "Visit", "Success"], correctAnswer: 1, explanation: { en: "경험 means experience." } },
+  { id: "L3-S1-P01", type: "vocabulary", question: '"경험"의 뜻은 무엇입니까?', options: ["Experience", "Memory", "Visit", "Success"], correctAnswer: 0, explanation: { en: "경험 means experience." } },
   { id: "L3-S1-P02", type: "vocabulary", question: '"잊다"의 뜻은 무엇입니까?', options: ["To remember", "To forget", "To feel", "To visit"], correctAnswer: 1, explanation: { en: "잊다 means to forget." } },
   { id: "L3-S1-P03", type: "vocabulary", question: "어떤 일에 실패하지 않고 잘 됐을 때 쓰는 말은?", options: ["실패하다", "성공하다", "시작하다", "끝내다"], correctAnswer: 1, explanation: { en: "성공하다 means to succeed." } },
-  { id: "L3-S1-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n한국 음식을 ______.", options: ["먹을 거예요", "먹고 있어요", "먹어 본 적이 있어요", "먹지 마세요"], correctAnswer: 2, explanation: { en: "-아/어 본 적이 있다 shows a past experience: 먹어 본 적이 있어요." } },
-  { id: "L3-S1-P05", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n숙제를 ______ 쉬었어요.", options: ["끝내려고", "끝내야 해서", "끝내고 나서", "끝내는데"], correctAnswer: 2, explanation: { en: "-고 나서 shows one action finishes before the next: 끝내고 나서." } },
-  { id: "L3-S1-P06", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n친구를 ______ 영화를 봤어요.", options: ["만나는 동안", "만나기 때문에", "만나고 나서", "만나 보다"], correctAnswer: 2, explanation: { en: "-고 나서 connects two sequential actions: 만나고 나서." } },
-  { id: "L3-S1-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n저는 작년에 ______ 한국을 방문했어요.", options: ["가끔", "마지막", "처음", "자주"], correctAnswer: 2, explanation: { en: "처음 means \"the first time.\"" } },
+  { id: "L3-S1-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n한국 음식을 ______.", options: ["먹어 본 적이 있어요", "먹고 있어요", "먹을 거예요", "먹지 마세요"], correctAnswer: 0, explanation: { en: "-아/어 본 적이 있다 shows a past experience: 먹어 본 적이 있어요." } },
+  { id: "L3-S1-P05", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n숙제를 ______ 쉬었어요.", options: ["끝내고 나서", "끝내야 해서", "끝내려고", "끝내는데"], correctAnswer: 0, explanation: { en: "-고 나서 shows one action finishes before the next: 끝내고 나서." } },
+  { id: "L3-S1-P06", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n친구를 ______ 영화를 봤어요.", options: ["만나는 동안", "만나기 때문에", "만나 보다", "만나고 나서"], correctAnswer: 3, explanation: { en: "-고 나서 connects two sequential actions: 만나고 나서." } },
+  { id: "L3-S1-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n저는 작년에 ______ 한국을 방문했어요.", options: ["가끔", "마지막", "자주", "처음"], correctAnswer: 3, explanation: { en: "처음 means \"the first time.\"" } },
   { id: "L3-S1-P08", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n그 경험은 저에게 ______ 기억이 됐어요.", options: ["잊은", "실패한", "특별한", "끝낸"], correctAnswer: 2, explanation: { en: "특별한 (special) fits describing a meaningful memory." } },
   { id: "L3-S1-P09", type: "listening", audioText: "저는 처음 한국 음식을 먹어 봤어요. 매워서 놀랐어요.", question: "이 사람은 왜 놀랐습니까?", options: ["맛이 없어서", "싸서", "매워서", "차가워서"], correctAnswer: 2, explanation: { en: 'The sentence says "surprised because it was spicy," so the answer is 매워서.' } },
   { id: "L3-S1-P10", type: "reading", passage: "저는 지난주에 처음 등산을 해 봤어요. 정말 재미있었어요.", question: "이 사람은 무엇을 처음 해 봤습니까?", options: ["요리", "수영", "등산", "여행"], correctAnswer: 2, explanation: { en: 'The passage says "tried hiking for the first time," so the answer is 등산.' } },

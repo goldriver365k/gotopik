@@ -74,8 +74,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "채소를 먼저 씻어야 해요.",
     audioUrl: null,
     question: "채소로 무엇을 먼저 해야 합니까?",
-    options: ["잘라요", "끓여요", "넣어요", "씻어요"],
-    correctAnswer: 3,
+    options: ["씻어요", "끓여요", "넣어요", "잘라요"],
+    correctAnswer: 0,
     translations: { en: { question: "What should be done to the vegetables first?", explanation: 'The sentence says "wash first," so the correct answer is 씻어요.' } },
   },
   {
@@ -92,8 +92,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "냄비에 물을 넣고 끓여요. 그 다음에 채소를 넣어요.",
     audioUrl: null,
     question: "물을 끓인 후에 무엇을 넣습니까?",
-    options: ["고기", "기름", "소금", "채소"],
-    correctAnswer: 3,
+    options: ["고기", "채소", "소금", "기름"],
+    correctAnswer: 1,
     translations: { en: { question: "What is added after boiling the water?", explanation: 'The sentence says "next, add vegetables," so the correct answer is 채소.' } },
   },
 ];
@@ -119,15 +119,15 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S8-R03",
     passage: "냄비에 물을 넣어요.\n소금을 조금 넣어요.\n물을 끓여요.\n그 다음에 채소를 넣어요.",
     question: "소금을 넣은 후에 무엇을 합니까?",
-    options: ["채소를 넣어요", "기름을 넣어요", "고기를 잘라요", "물을 끓여요"],
-    correctAnswer: 3,
+    options: ["채소를 넣어요", "물을 끓여요", "고기를 잘라요", "기름을 넣어요"],
+    correctAnswer: 1,
     translations: { en: { question: "What happens after adding salt?", explanation: 'The passage says they boil the water next, so the correct answer is 물을 끓여요.' } },
   },
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L2-S8-P01", type: "vocabulary", question: '"재료"의 뜻은 무엇입니까?', options: ["Ingredient", "Recipe", "Kitchen", "Knife"], correctAnswer: 0, explanation: { en: "재료 means ingredient." } },
-  { id: "L2-S8-P02", type: "vocabulary", question: '"끓이다"의 뜻은 무엇입니까?', options: ["To cut", "To boil", "To add", "To wash"], correctAnswer: 1, explanation: { en: "끓이다 means to boil." } },
+  { id: "L2-S8-P01", type: "vocabulary", question: '"재료"의 뜻은 무엇입니까?', options: ["Kitchen", "Recipe", "Ingredient", "Knife"], correctAnswer: 2, explanation: { en: "재료 means ingredient." } },
+  { id: "L2-S8-P02", type: "vocabulary", question: '"끓이다"의 뜻은 무엇입니까?', options: ["To cut", "To wash", "To add", "To boil"], correctAnswer: 3, explanation: { en: "끓이다 means to boil." } },
   { id: "L2-S8-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n채소를 먼저 ______.", options: ["씻어요", "씻었어요", "씻어야 해요", "씻고 있어요"], correctAnswer: 2, explanation: { en: "-아/어야 하다 shows necessity: 씻어야 해요." } },
   { id: "L2-S8-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n고기를 자르___ 소금을 넣어요.", options: ["아서", "지만", "려고", "고"], correctAnswer: 3, explanation: { en: "-고 connects two actions: 자르고 넣어요." } },
   { id: "L2-S8-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n냄비에 물을 넣고 ______.", options: ["끓여요", "잘라요", "넣어요", "만들어요"], correctAnswer: 0, explanation: { en: "끓여요 means to boil." } },

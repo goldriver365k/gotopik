@@ -78,8 +78,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "오늘 피곤해요. 그래서 집에서 쉬어요.",
     audioUrl: null,
     question: "오늘 무엇을 합니까?",
-    options: ["학교에 가요", "회사에 가요", "집에서 쉬어요", "친구를 만나요"],
-    correctAnswer: 2,
+    options: ["집에서 쉬어요", "회사에 가요", "학교에 가요", "친구를 만나요"],
+    correctAnswer: 0,
     translations: { en: { question: "What do they do today?", explanation: 'The sentence says "I rest at home," so the answer is 집에서 쉬어요.' } },
   },
 ];
@@ -89,8 +89,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S10-R01",
     passage: "저는 오늘 아파요.\n머리가 아프고 피곤해요.",
     question: "저는 오늘 어떻습니까?",
-    options: ["괜찮아요", "아파요", "좋아요", "바빠요"],
-    correctAnswer: 1,
+    options: ["괜찮아요", "좋아요", "아파요", "바빠요"],
+    correctAnswer: 2,
     translations: { en: { question: "How is this person today?", explanation: 'The passage says "I am sick today," so the answer is 아파요.' } },
   },
   {

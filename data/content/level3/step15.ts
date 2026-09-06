@@ -83,8 +83,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 온라인 수업이 편리하다고 생각해요. 시간과 장소에 상관없이 들을 수 있기 때문이에요.",
     audioUrl: null,
     question: "이 사람은 왜 온라인 수업이 편리하다고 생각합니까?",
-    options: ["선생님이 좋아서", "시간과 장소에 상관없이 들을 수 있어서", "숙제가 없어서", "친구를 만날 수 있어서"],
-    correctAnswer: 1,
+    options: ["선생님이 좋아서", "친구를 만날 수 있어서", "숙제가 없어서", "시간과 장소에 상관없이 들을 수 있어서"],
+    correctAnswer: 3,
     translations: { en: { question: "Why does this person think online classes are convenient?", explanation: 'The sentence says "can attend regardless of time and place," so the correct answer is 시간과 장소에 상관없이 들을 수 있어서.' } },
   },
   {
@@ -122,8 +122,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "온라인 수업에 대한 의견은 사람마다 달라요.\n어떤 사람들은 시간을 아낄 수 있어서 찬성해요.\n반면에 어떤 사람들은 집중하기 어렵다는 이유로 반대해요.\n저는 개인적으로 두 방법을 상황에 따라 같이 이용하는 것이 좋다고 생각해요.",
     question: "이 글쓴이의 개인적인 생각은 무엇입니까?",
-    options: ["온라인 수업은 필요 없다", "온라인 수업만 해야 한다", "두 방법을 상황에 따라 같이 이용하는 것이 좋다", "직접 수업만 해야 한다"],
-    correctAnswer: 2,
+    options: ["온라인 수업은 필요 없다", "온라인 수업만 해야 한다", "직접 수업만 해야 한다", "두 방법을 상황에 따라 같이 이용하는 것이 좋다"],
+    correctAnswer: 3,
     translations: { en: { question: "What is the writer's personal opinion?", explanation: "The passage says it's good to use both depending on the situation, so the correct answer is 두 방법을 상황에 따라 같이 이용하는 것이 좋다." } },
   },
   {
@@ -161,7 +161,7 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S15-P01", type: "vocabulary", question: '"찬성"의 뜻은 무엇입니까?', options: ["Opposition", "Agreement / approval", "Conclusion", "Judgment"], correctAnswer: 1, explanation: { en: "찬성 means agreement/approval." } },
+  { id: "L3-S15-P01", type: "vocabulary", question: '"찬성"의 뜻은 무엇입니까?', options: ["Opposition", "Judgment", "Conclusion", "Agreement / approval"], correctAnswer: 3, explanation: { en: "찬성 means agreement/approval." } },
   { id: "L3-S15-P02", type: "vocabulary", question: '"근거"의 뜻은 무엇입니까?', options: ["Conclusion", "Grounds / basis", "Opinion", "Point of view"], correctAnswer: 1, explanation: { en: "근거 means grounds/basis." } },
   { id: "L3-S15-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n저는 온라인 수업이 편리______ 생각해요.", options: ["해서", "하다고", "하는데", "하니까"], correctAnswer: 1, explanation: { en: "-다고 생각하다 states an opinion: 편리하다고 생각해요." } },
   { id: "L3-S15-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n시간을 아낄 수 있______ 저는 찬성해요.", options: ["는 동안", "고 나서", "기 때문에", "기 위해서는"], correctAnswer: 2, explanation: { en: "-기 때문에 gives a reason: 아낄 수 있기 때문에." } },

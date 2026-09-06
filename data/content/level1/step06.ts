@@ -251,8 +251,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 지하철을 타고 회사에 가요.",
     audioUrl: null,
     question: "무엇을 타고 회사에 갑니까?",
-    options: ["버스", "자전거", "택시", "지하철"],
-    correctAnswer: 3,
+    options: ["지하철", "자전거", "택시", "버스"],
+    correctAnswer: 0,
     translations: {
       en: {
         question: "What do they take to work?",
@@ -265,8 +265,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "은행은 학교 앞에 있어요.",
     audioUrl: null,
     question: "은행은 어디에 있습니까?",
-    options: ["학교 뒤", "집 안", "학교 옆", "학교 앞"],
-    correctAnswer: 3,
+    options: ["학교 뒤", "학교 앞", "학교 옆", "집 안"],
+    correctAnswer: 1,
     translations: {
       en: {
         question: "Where is the bank?",
@@ -281,8 +281,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S6-R01",
     passage: "저는 매일 버스를 타요.\n버스에서 회사에 가요.",
     question: "저는 무엇을 타고 회사에 갑니까?",
-    options: ["버스", "지하철", "택시", "자전거"],
-    correctAnswer: 0,
+    options: ["지하철", "버스", "택시", "자전거"],
+    correctAnswer: 1,
     translations: {
       en: {
         question: "What do they take to work?",

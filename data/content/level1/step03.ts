@@ -240,8 +240,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 교실에서 책을 읽어요.",
     audioUrl: null,
     question: "어디에서 책을 읽습니까?",
-    options: ["교실", "식당", "집", "은행"],
-    correctAnswer: 0,
+    options: ["집", "식당", "교실", "은행"],
+    correctAnswer: 2,
     translations: {
       en: {
         question: "Where do they read a book?",
@@ -272,8 +272,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S3-R01",
     passage: "저는 학생이에요.\n저는 학교에 가요.\n교실에서 공부해요.",
     question: "이 사람은 어디에서 공부합니까?",
-    options: ["교실", "집", "식당", "회사"],
-    correctAnswer: 0,
+    options: ["회사", "집", "식당", "교실"],
+    correctAnswer: 3,
     translations: {
       en: {
         question: "Where does this person study?",

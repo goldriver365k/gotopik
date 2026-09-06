@@ -238,8 +238,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 아침 일곱 시에 일어나요.",
     audioUrl: null,
     question: "몇 시에 일어납니까?",
-    options: ["일곱 시", "여덟 시", "아홉 시", "여섯 시"],
-    correctAnswer: 0,
+    options: ["아홉 시", "여덟 시", "일곱 시", "여섯 시"],
+    correctAnswer: 2,
     translations: {
       en: {
         question: "What time do they wake up?",
@@ -281,8 +281,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S5-R02",
     passage: "민수는 매일 학교에 가요.\n민수는 저녁에 숙제를 해요.",
     question: "민수는 언제 숙제를 합니까?",
-    options: ["아침", "점심", "저녁", "오늘"],
-    correctAnswer: 2,
+    options: ["저녁", "점심", "아침", "오늘"],
+    correctAnswer: 0,
     translations: {
       en: {
         question: "When does Minsu do his homework?",

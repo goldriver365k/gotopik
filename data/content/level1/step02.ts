@@ -266,8 +266,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "이 사람은 제 어머니예요.",
     audioUrl: null,
     question: "이 사람은 누구입니까?",
-    options: ["아버지", "할머니", "어머니", "언니"],
-    correctAnswer: 2,
+    options: ["아버지", "어머니", "할머니", "언니"],
+    correctAnswer: 1,
     translations: {
       en: {
         question: "Who is this person?",
@@ -283,8 +283,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S2-R01",
     passage: "저는 민수예요.\n우리 가족은 네 명이에요.\n아버지, 어머니, 동생이 있어요.",
     question: "민수 씨의 가족은 몇 명입니까?",
-    options: ["두 명", "세 명", "다섯 명", "네 명"],
-    correctAnswer: 3,
+    options: ["두 명", "세 명", "네 명", "다섯 명"],
+    correctAnswer: 2,
     translations: {
       en: {
         question: "How many people are in Minsu's family?",
@@ -297,8 +297,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S2-R02",
     passage: "저는 수미예요.\n저는 오빠가 있어요.\n오빠는 회사에 가요.",
     question: "오빠는 어디에 가요?",
-    options: ["회사", "학교", "식당", "집"],
-    correctAnswer: 0,
+    options: ["학교", "회사", "식당", "집"],
+    correctAnswer: 1,
     translations: {
       en: {
         question: "Where does the older brother go?",

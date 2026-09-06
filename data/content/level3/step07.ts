@@ -113,8 +113,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "저는 한국어 단어를 외우는 게 어려웠어요.\n그래서 매일 조금씩 반복해서 연습했어요.\n한 달 후에 실력이 많이 늘었어요.\n꾸준한 연습이 정말 효과가 있었어요.",
     question: "이 사람의 실력이 는 이유는 무엇입니까?",
-    options: ["책을 많이 사서", "학원에 다녀서", "친구에게 배워서", "매일 반복해서 연습해서"],
-    correctAnswer: 3,
+    options: ["책을 많이 사서", "매일 반복해서 연습해서", "친구에게 배워서", "학원에 다녀서"],
+    correctAnswer: 1,
     translations: { en: { question: "Why did this person's skill improve?", explanation: "The passage says they practiced repeatedly every day, so the correct answer is 매일 반복해서 연습해서." } },
   },
   {
@@ -160,13 +160,13 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S7-P01", type: "vocabulary", question: '"암기"의 뜻은 무엇입니까?', options: ["Explanation", "Understanding", "Concentration", "Memorization"], correctAnswer: 3, explanation: { en: "암기 means memorization." } },
-  { id: "L3-S7-P02", type: "vocabulary", question: '"포기하다"의 뜻은 무엇입니까?', options: ["To repeat", "To give up", "To master", "To submit"], correctAnswer: 1, explanation: { en: "포기하다 means to give up." } },
+  { id: "L3-S7-P01", type: "vocabulary", question: '"암기"의 뜻은 무엇입니까?', options: ["Explanation", "Understanding", "Memorization", "Concentration"], correctAnswer: 2, explanation: { en: "암기 means memorization." } },
+  { id: "L3-S7-P02", type: "vocabulary", question: '"포기하다"의 뜻은 무엇입니까?', options: ["To repeat", "To submit", "To master", "To give up"], correctAnswer: 3, explanation: { en: "포기하다 means to give up." } },
   { id: "L3-S7-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이 단어는 외우______.", options: ["기 때문이에요", "고 나서 해요", "는 동안이에요", "기 어려워요"], correctAnswer: 3, explanation: { en: "-기 어렵다 means \"hard to do\": 외우기 어려워요." } },
   { id: "L3-S7-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n시험을 보는 ______ 휴대전화를 쓸 수 없어요.", options: ["보다", "후에", "때문에", "동안"], correctAnswer: 3, explanation: { en: "-는 동안 means \"while\": 보는 동안." } },
-  { id: "L3-S7-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n이 문법은 정말 ______.", options: ["이해하기 쉬워요", "암기예요", "성적이에요", "제출해요"], correctAnswer: 0, explanation: { en: "이해하기 쉬워요 (\"easy to understand\") fits describing grammar." } },
+  { id: "L3-S7-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n이 문법은 정말 ______.", options: ["암기예요", "이해하기 쉬워요", "성적이에요", "제출해요"], correctAnswer: 1, explanation: { en: "이해하기 쉬워요 (\"easy to understand\") fits describing grammar." } },
   { id: "L3-S7-P06", type: "vocabulary", question: "수업 전에 미리 공부하는 것을 무엇이라고 합니까?", options: ["복습", "예습", "암기", "필기"], correctAnswer: 1, explanation: { en: "예습 means preview (studying ahead)." } },
-  { id: "L3-S7-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n힘들어도 ______ 계속 노력해요.", options: ["포기하지 않고", "포기하고 나서", "포기하기 위해서", "포기하는 동안"], correctAnswer: 0, explanation: { en: "포기하지 않고 means \"without giving up.\"" } },
+  { id: "L3-S7-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n힘들어도 ______ 계속 노력해요.", options: ["포기하기 위해서", "포기하고 나서", "포기하지 않고", "포기하는 동안"], correctAnswer: 2, explanation: { en: "포기하지 않고 means \"without giving up.\"" } },
   { id: "L3-S7-P08", type: "listening", audioText: "예습을 하고 나서 수업을 들으니까 이해가 쉬워졌어요.", question: "왜 이해가 쉬워졌습니까?", options: ["예습을 하고 나서 수업을 들어서", "발표를 많이 해서", "친구와 공부해서", "과제가 없어서"], correctAnswer: 0, explanation: { en: 'The sentence says previewing before class helped, so the answer is 예습을 하고 나서 수업을 들어서.' } },
   { id: "L3-S7-P09", type: "reading", passage: "매일 반복해서 연습해서 한국어 실력이 많이 늘었어요.", question: "실력이 는 이유는 무엇입니까?", options: ["매일 반복해서 연습해서", "학원에 다녀서", "책을 많이 사서", "시험을 많이 봐서"], correctAnswer: 0, explanation: { en: 'The passage says they practiced repeatedly every day, so the answer is 매일 반복해서 연습해서.' } },
   { id: "L3-S7-P10", type: "reading", passage: "예습, 필기, 복습 세 가지가 효과적인 공부 방법이에요.", question: "이 글에서 소개하는 것은 무엇입니까?", options: ["효과적인 공부 방법", "학교 시설", "시험 날짜", "선생님 소개"], correctAnswer: 0, explanation: { en: 'The passage introduces effective study methods, so the answer is 효과적인 공부 방법.' } },

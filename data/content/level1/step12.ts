@@ -143,8 +143,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S12-R01",
     passage: "식당 운영시간\n오전 11시 ~ 오후 9시",
     question: "식당은 오전 몇 시에 문을 엽니까?",
-    options: ["9시", "10시", "11시", "12시"],
-    correctAnswer: 2,
+    options: ["12시", "10시", "9시", "11시"],
+    correctAnswer: 3,
     translations: { en: { question: "What time does the restaurant open?", explanation: 'The sign says "11:00 AM - 9:00 PM," so the correct answer is 11시.' } },
   },
   {

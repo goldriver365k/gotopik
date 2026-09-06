@@ -94,8 +94,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "처음에는 모든 것이 낯설었어요. 하지만 시간이 지나면서 점점 익숙해졌어요.",
     audioUrl: null,
     question: "이 사람은 지금 어떻습니까?",
-    options: ["적응하지 못했어요", "익숙해졌어요", "아직도 낯설어요", "돌아가고 싶어해요"],
-    correctAnswer: 1,
+    options: ["적응하지 못했어요", "돌아가고 싶어해요", "아직도 낯설어요", "익숙해졌어요"],
+    correctAnswer: 3,
     translations: { en: { question: "How does this person feel now?", explanation: 'The sentence says "gradually became familiar," so the correct answer is 익숙해졌어요.' } },
   },
   {
@@ -133,8 +133,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "한국에 처음 왔을 때는 생활 속도가 빨라서 적응하기 힘들었어요.\n제 나라에 비해서 사람들이 여유가 없어 보였어요.\n하지만 시간이 지나면서 이런 생활방식에도 익숙해졌어요.\n지금은 오히려 이 속도가 편하게 느껴져요.",
     question: "이 사람은 처음에 왜 적응하기 힘들었습니까?",
-    options: ["음식이 안 맞아서", "말투가 낯설어서", "생활 속도가 빨라서", "친구가 없어서"],
-    correctAnswer: 2,
+    options: ["음식이 안 맞아서", "말투가 낯설어서", "친구가 없어서", "생활 속도가 빨라서"],
+    correctAnswer: 3,
     translations: { en: { question: "Why was it hard to adapt at first?", explanation: "The passage says the pace of life was fast, so the correct answer is 생활 속도가 빨라서." } },
   },
 ];
@@ -164,7 +164,7 @@ const WRITING: WritingItem[] = [
 
 const PRACTICE: PracticeQuestionData[] = [
   { id: "L3-S11-P01", type: "vocabulary", question: '"예절"의 뜻은 무엇입니까?', options: ["Etiquette / manners", "Habit", "Relationship", "Tradition"], correctAnswer: 0, explanation: { en: "예절 means etiquette/manners." } },
-  { id: "L3-S11-P02", type: "vocabulary", question: '"적응하다"의 뜻은 무엇입니까?', options: ["To respect", "To adapt", "To welcome", "To express"], correctAnswer: 1, explanation: { en: "적응하다 means to adapt." } },
+  { id: "L3-S11-P02", type: "vocabulary", question: '"적응하다"의 뜻은 무엇입니까?', options: ["To respect", "To express", "To welcome", "To adapt"], correctAnswer: 3, explanation: { en: "적응하다 means to adapt." } },
   { id: "L3-S11-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n도시______ 시골은 조용해요.", options: ["에 비해서", "때문에", "덕분에", "동안에"], correctAnswer: 0, explanation: { en: "-에 비해서 sets up a comparison: 도시에 비해서." } },
   { id: "L3-S11-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n저는 아침에 일찍 일어나는 ______.", options: ["편이에요", "동안이에요", "김에요", "적이에요"], correctAnswer: 0, explanation: { en: "-는 편이다 describes a tendency: 일어나는 편이에요." } },
   { id: "L3-S11-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n처음에는 모든 것이 ______.", options: ["존중했어요", "낯설었어요", "익숙했어요", "환영했어요"], correctAnswer: 1, explanation: { en: "낯설었어요 means \"it was unfamiliar.\"" } },

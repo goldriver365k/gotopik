@@ -130,8 +130,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "요즘 환경 오염 문제가 심각해지고 있어요.\n그래서 저는 일상생활에서 할 수 있는 작은 일부터 실천해요.\n예를 들어 전기 사용량을 줄이고 친환경 제품을 사용해요.\n지구는 소중하니까 모두 함께 노력하지 않으면 안 된다고 생각해요.",
     question: "이 사람은 환경을 위해 어떤 노력을 합니까?",
-    options: ["전기 사용량을 줄이고 친환경 제품을 사용해요", "매일 새 물건을 사요", "쓰레기를 아무 곳에나 버려요", "물을 많이 사용해요"],
-    correctAnswer: 0,
+    options: ["물을 많이 사용해요", "매일 새 물건을 사요", "쓰레기를 아무 곳에나 버려요", "전기 사용량을 줄이고 친환경 제품을 사용해요"],
+    correctAnswer: 3,
     translations: { en: { question: "What effort does this person make for the environment?", explanation: "The passage says they reduce electricity usage and use eco-friendly products, so the correct answer is 전기 사용량을 줄이고 친환경 제품을 사용해요." } },
   },
 ];
@@ -157,14 +157,14 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S14-P01", type: "vocabulary", question: '"분리수거"의 뜻은 무엇입니까?', options: ["Pollution", "Waste separation", "Public place", "Rule"], correctAnswer: 1, explanation: { en: "분리수거 means waste separation." } },
+  { id: "L3-S14-P01", type: "vocabulary", question: '"분리수거"의 뜻은 무엇입니까?', options: ["Pollution", "Rule", "Public place", "Waste separation"], correctAnswer: 3, explanation: { en: "분리수거 means waste separation." } },
   { id: "L3-S14-P02", type: "vocabulary", question: '"보호하다"의 뜻은 무엇입니까?', options: ["To pollute", "To protect", "To waste", "To throw away"], correctAnswer: 1, explanation: { en: "보호하다 means to protect." } },
   { id: "L3-S14-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n환경을 위해서 쓰레기를 ______.", options: ["줄이고 나서예요", "줄여야 해요", "줄이는 동안이에요", "줄이지 마세요"], correctAnswer: 1, explanation: { en: "-아/어야 하다 states necessity: 줄여야 해요." } },
   { id: "L3-S14-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n분리수거를 ______.", options: ["지키는 편이에요", "지키기 좋아요", "지키지 않으면 안 돼요", "지킨 적이 있어요"], correctAnswer: 2, explanation: { en: "-지 않으면 안 되다 means \"must\": 지키지 않으면 안 돼요." } },
   { id: "L3-S14-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n물은 ______ 자원이에요.", options: ["낯선", "복잡한", "소중한", "충동적인"], correctAnswer: 2, explanation: { en: "소중한 (precious) fits describing a valuable resource." } },
   { id: "L3-S14-P06", type: "vocabulary", question: "공기나 물이 더러워지는 것을 무엇이라고 합니까?", options: ["재활용", "절전", "질서", "오염"], correctAnswer: 3, explanation: { en: "오염 means pollution." } },
   { id: "L3-S14-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n쓰레기는 ______에 버리세요.", options: ["질서", "공공장소", "규칙", "쓰레기통"], correctAnswer: 3, explanation: { en: "쓰레기통 means trash can." } },
-  { id: "L3-S14-P08", type: "listening", audioText: "쓰레기를 버릴 때는 분리수거를 지키지 않으면 안 돼요.", question: "쓰레기를 버릴 때 무엇을 해야 합니까?", options: ["분리수거를 지켜야 해요", "빨리 버려야 해요", "밤에 버려야 해요", "쓰레기통을 사야 해요"], correctAnswer: 0, explanation: { en: 'The sentence says you must follow waste separation, so the answer is 분리수거를 지켜야 해요.' } },
+  { id: "L3-S14-P08", type: "listening", audioText: "쓰레기를 버릴 때는 분리수거를 지키지 않으면 안 돼요.", question: "쓰레기를 버릴 때 무엇을 해야 합니까?", options: ["밤에 버려야 해요", "빨리 버려야 해요", "분리수거를 지켜야 해요", "쓰레기통을 사야 해요"], correctAnswer: 2, explanation: { en: 'The sentence says you must follow waste separation, so the answer is 분리수거를 지켜야 해요.' } },
   { id: "L3-S14-P09", type: "reading", passage: "규칙을 지키지 않으면 다른 사람들이 불편해져요.", question: "규칙을 지키지 않으면 어떻게 됩니까?", options: ["다른 사람들이 불편해져요", "공간이 넓어져요", "쓰레기가 줄어들어요", "질서가 좋아져요"], correctAnswer: 0, explanation: { en: 'The passage says other people become inconvenienced, so the answer is 다른 사람들이 불편해져요.' } },
   { id: "L3-S14-P10", type: "reading", passage: "전기 사용량을 줄이고 친환경 제품을 사용해서 환경을 지켜요.", question: "이 사람은 환경을 위해 무엇을 합니까?", options: ["전기 사용량을 줄이고 친환경 제품을 사용해요", "물건을 많이 사요", "쓰레기를 아무 곳에나 버려요", "전기를 많이 써요"], correctAnswer: 0, explanation: { en: 'The passage says they reduce electricity usage and use eco-friendly products, so the answer is 전기 사용량을 줄이고 친환경 제품을 사용해요.' } },
 ];

@@ -89,8 +89,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 스트레스를 줄이도록 매일 산책을 해요. 그러면 기분이 좋아져요.",
     audioUrl: null,
     question: "이 사람은 왜 매일 산책을 합니까?",
-    options: ["시간이 남아서", "살을 빼려고", "친구를 만나려고", "스트레스를 줄이려고"],
-    correctAnswer: 3,
+    options: ["스트레스를 줄이려고", "살을 빼려고", "친구를 만나려고", "시간이 남아서"],
+    correctAnswer: 0,
     translations: { en: { question: "Why do they take a walk every day?", explanation: 'The sentence says "so that I reduce stress," so the correct answer is 스트레스를 줄이려고.' } },
   },
   {
@@ -98,8 +98,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "건강을 유지하려면 규칙적인 생활습관이 중요해요. 식사도 균형 있게 하는 게 좋아요.",
     audioUrl: null,
     question: "건강을 유지하기 위해 무엇이 중요합니까?",
-    options: ["긴 휴가", "비싼 약", "많은 운동", "규칙적인 생활습관"],
-    correctAnswer: 3,
+    options: ["긴 휴가", "규칙적인 생활습관", "많은 운동", "비싼 약"],
+    correctAnswer: 1,
     translations: { en: { question: "What is important for maintaining health?", explanation: "The sentence says a regular lifestyle is important, so the correct answer is 규칙적인 생활습관." } },
   },
 ];
@@ -154,14 +154,14 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S6-P01", type: "vocabulary", question: '"생활습관"의 뜻은 무엇입니까?', options: ["Fatigue", "Health condition", "Mood", "Lifestyle habit"], correctAnswer: 3, explanation: { en: "생활습관 means lifestyle habit." } },
-  { id: "L3-S6-P02", type: "vocabulary", question: '"회복하다"의 뜻은 무엇입니까?', options: ["To reduce", "To recover", "To manage", "To worry"], correctAnswer: 1, explanation: { en: "회복하다 means to recover." } },
-  { id: "L3-S6-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n건강하______ 매일 운동해요.", options: ["는 동안", "고 나서", "기 때문에", "도록"], correctAnswer: 3, explanation: { en: "-도록 shows purpose: 건강하도록." } },
-  { id: "L3-S6-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n스트레스를 줄이는 ______ 좋아요.", options: ["김에", "곳이", "적이", "것이"], correctAnswer: 3, explanation: { en: "-는 것이 좋다 gives advice: 줄이는 것이 좋아요." } },
-  { id: "L3-S6-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n잠을 ______ 자야 해요.", options: ["다시", "갑자기", "미리", "충분히"], correctAnswer: 3, explanation: { en: "충분히 means \"sufficiently.\"" } },
-  { id: "L3-S6-P06", type: "vocabulary", question: "몸이 피곤해서 쌓인 것을 무엇이라고 합니까?", options: ["체력", "휴식", "균형", "피로"], correctAnswer: 3, explanation: { en: "피로 means fatigue." } },
-  { id: "L3-S6-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n운동을 하면 ______도 좋아지고 체력도 늘어요.", options: ["관리", "예방", "상태", "기분"], correctAnswer: 3, explanation: { en: "기분 (mood) fits: 기분도 좋아지고." } },
-  { id: "L3-S6-P08", type: "listening", audioText: "스트레스를 줄이도록 매일 산책을 해요.", question: "왜 매일 산책을 합니까?", options: ["잠이 안 와서", "살을 빼려고", "친구를 만나려고", "스트레스를 줄이려고"], correctAnswer: 3, explanation: { en: 'The sentence says "so that I reduce stress," so the answer is 스트레스를 줄이려고.' } },
+  { id: "L3-S6-P01", type: "vocabulary", question: '"생활습관"의 뜻은 무엇입니까?', options: ["Mood", "Health condition", "Lifestyle habit", "Fatigue"], correctAnswer: 2, explanation: { en: "생활습관 means lifestyle habit." } },
+  { id: "L3-S6-P02", type: "vocabulary", question: '"회복하다"의 뜻은 무엇입니까?', options: ["To reduce", "To worry", "To manage", "To recover"], correctAnswer: 3, explanation: { en: "회복하다 means to recover." } },
+  { id: "L3-S6-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n건강하______ 매일 운동해요.", options: ["도록", "고 나서", "기 때문에", "는 동안"], correctAnswer: 0, explanation: { en: "-도록 shows purpose: 건강하도록." } },
+  { id: "L3-S6-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n스트레스를 줄이는 ______ 좋아요.", options: ["것이", "곳이", "적이", "김에"], correctAnswer: 0, explanation: { en: "-는 것이 좋다 gives advice: 줄이는 것이 좋아요." } },
+  { id: "L3-S6-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n잠을 ______ 자야 해요.", options: ["다시", "충분히", "미리", "갑자기"], correctAnswer: 1, explanation: { en: "충분히 means \"sufficiently.\"" } },
+  { id: "L3-S6-P06", type: "vocabulary", question: "몸이 피곤해서 쌓인 것을 무엇이라고 합니까?", options: ["체력", "피로", "균형", "휴식"], correctAnswer: 1, explanation: { en: "피로 means fatigue." } },
+  { id: "L3-S6-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n운동을 하면 ______도 좋아지고 체력도 늘어요.", options: ["관리", "예방", "기분", "상태"], correctAnswer: 2, explanation: { en: "기분 (mood) fits: 기분도 좋아지고." } },
+  { id: "L3-S6-P08", type: "listening", audioText: "스트레스를 줄이도록 매일 산책을 해요.", question: "왜 매일 산책을 합니까?", options: ["잠이 안 와서", "살을 빼려고", "스트레스를 줄이려고", "친구를 만나려고"], correctAnswer: 2, explanation: { en: 'The sentence says "so that I reduce stress," so the answer is 스트레스를 줄이려고.' } },
   { id: "L3-S6-P09", type: "reading", passage: "건강을 유지하려면 규칙적인 생활습관이 중요해요.", question: "건강 유지에 중요한 것은 무엇입니까?", options: ["새 운동화", "비싼 약", "많은 휴가", "규칙적인 생활습관"], correctAnswer: 3, explanation: { en: 'The passage says a regular lifestyle is important, so the answer is 규칙적인 생활습관.' } },
   { id: "L3-S6-P10", type: "reading", passage: "작은 습관을 꾸준히 실천하는 것이 건강에 중요해요.", question: "이 글에서 중요하다고 말하는 것은 무엇입니까?", options: ["잠을 줄이는 것", "비싼 운동 기구", "병원에 자주 가는 것", "작은 습관을 꾸준히 실천하는 것"], correctAnswer: 3, explanation: { en: 'The passage says practicing small habits consistently is important, so the answer is 작은 습관을 꾸준히 실천하는 것.' } },
 ];

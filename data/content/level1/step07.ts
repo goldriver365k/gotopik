@@ -94,8 +94,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S7-R02",
     passage: "저는 시장에 가요.\n시장에서 과일을 사요.",
     question: "저는 시장에서 무엇을 삽니까?",
-    options: ["옷", "신발", "과일", "가방"],
-    correctAnswer: 2,
+    options: ["옷", "신발", "가방", "과일"],
+    correctAnswer: 3,
     translations: { en: { question: "What do they buy at the market?", explanation: 'The passage says "I buy fruit at the market," so the answer is 과일.' } },
   },
 ];

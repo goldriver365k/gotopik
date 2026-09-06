@@ -73,8 +73,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 매일 아침에 운동해요.",
     audioUrl: null,
     question: "언제 운동합니까?",
-    options: ["저녁", "밤", "점심", "아침"],
-    correctAnswer: 3,
+    options: ["아침", "밤", "점심", "저녁"],
+    correctAnswer: 0,
     translations: { en: { question: "When do they exercise?", explanation: 'The sentence says "every morning," so the correct answer is 아침.' } },
   },
   {
@@ -91,8 +91,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 요즘 스트레스가 많아요. 그래서 잠을 잘 못 자요.",
     audioUrl: null,
     question: "이 사람은 요즘 어떻습니까?",
-    options: ["건강해요", "운동을 많이 해요", "피곤하지 않아요", "스트레스가 많아요"],
-    correctAnswer: 3,
+    options: ["건강해요", "운동을 많이 해요", "스트레스가 많아요", "피곤하지 않아요"],
+    correctAnswer: 2,
     translations: { en: { question: "How is this person these days?", explanation: 'The sentence says "I have a lot of stress," so the correct answer is 스트레스가 많아요.' } },
   },
 ];
@@ -102,16 +102,16 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S9-R01",
     passage: "저는 매일 아침에 운동해요.\n그래서 건강해요.",
     question: "이 사람은 왜 건강합니까?",
-    options: ["매일 자서", "매일 먹어서", "매일 쉬어서", "매일 운동해서"],
-    correctAnswer: 3,
+    options: ["매일 운동해서", "매일 먹어서", "매일 쉬어서", "매일 자서"],
+    correctAnswer: 0,
     translations: { en: { question: "Why is this person healthy?", explanation: 'The passage says they exercise every day, so the correct answer is 매일 운동해서.' } },
   },
   {
     id: "L2-S9-R02",
     passage: "잠을 충분히 자야 해요.\n스트레스를 조심해야 해요.",
     question: "건강을 위해 무엇을 해야 합니까?",
-    options: ["늦게 자기", "약 먹기", "운동 안 하기", "충분히 자기와 스트레스 조심"],
-    correctAnswer: 3,
+    options: ["늦게 자기", "충분히 자기와 스트레스 조심", "운동 안 하기", "약 먹기"],
+    correctAnswer: 1,
     translations: { en: { question: "What should you do for your health?", explanation: 'The passage says to sleep enough and watch out for stress, so the correct answer is 충분히 자기와 스트레스 조심.' } },
   },
   {
@@ -126,7 +126,7 @@ const READING: ReadingQuestionData[] = [
 
 const PRACTICE: PracticeQuestionData[] = [
   { id: "L2-S9-P01", type: "vocabulary", question: '"건강"의 뜻은 무엇입니까?', options: ["Health", "Sleep", "Stress", "Habit"], correctAnswer: 0, explanation: { en: "건강 means health." } },
-  { id: "L2-S9-P02", type: "vocabulary", question: '"충분하다"의 뜻은 무엇입니까?', options: ["Insufficient", "Sufficient", "Careful", "Regular"], correctAnswer: 1, explanation: { en: "충분하다 means sufficient/enough." } },
+  { id: "L2-S9-P02", type: "vocabulary", question: '"충분하다"의 뜻은 무엇입니까?', options: ["Insufficient", "Regular", "Careful", "Sufficient"], correctAnswer: 3, explanation: { en: "충분하다 means sufficient/enough." } },
   { id: "L2-S9-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n너무 늦게 ______.", options: ["자요", "잤어요", "자지 마세요", "잘 거예요"], correctAnswer: 2, explanation: { en: "-지 마세요 tells someone not to do something: 자지 마세요." } },
   { id: "L2-S9-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n규칙적으로 운동______.", options: ["해요", "했어요", "하세요", "해야 해요"], correctAnswer: 3, explanation: { en: "-아/어야 하다 shows necessity: 해야 해요." } },
   { id: "L2-S9-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n저는 요즘 ______.", options: ["피곤해요", "건강해요", "즐거워요", "특별해요"], correctAnswer: 0, explanation: { en: "피곤해요 means tired." } },

@@ -95,8 +95,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 대중교통을 이용하는 반면에 제 동료는 매일 자동차로 출퇴근해요.",
     audioUrl: null,
     question: "동료는 어떻게 출퇴근합니까?",
-    options: ["지하철로", "자동차로", "버스로", "걸어서"],
-    correctAnswer: 1,
+    options: ["지하철로", "걸어서", "버스로", "자동차로"],
+    correctAnswer: 3,
     translations: { en: { question: "How does the coworker commute?", explanation: "The sentence says the coworker commutes by car every day, so the correct answer is 자동차로." } },
   },
 ];
@@ -116,8 +116,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "최근 도시 인구가 계속 증가하고 있어요.\n그 결과 자동차도 늘어나서 도로가 자주 막혀요.\n반면에 대중교통을 이용하는 사람은 크게 늘지 않았어요.\n그래서 시에서는 대중교통 이용을 늘리려고 노력하고 있어요.",
     question: "시에서는 무엇을 하려고 노력하고 있습니까?",
-    options: ["도로를 넓히려고", "주차장을 없애려고", "대중교통 이용을 늘리려고", "인구를 줄이려고"],
-    correctAnswer: 2,
+    options: ["도로를 넓히려고", "주차장을 없애려고", "인구를 줄이려고", "대중교통 이용을 늘리려고"],
+    correctAnswer: 3,
     translations: { en: { question: "What is the city trying to do?", explanation: "The passage says the city is trying to increase public transit use, so the correct answer is 대중교통 이용을 늘리려고." } },
   },
   {
@@ -153,7 +153,7 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S9-P01", type: "vocabulary", question: '"혼잡"의 뜻은 무엇입니까?', options: ["Congestion", "Convenience", "Population", "Environment"], correctAnswer: 0, explanation: { en: "혼잡 means congestion." } },
+  { id: "L3-S9-P01", type: "vocabulary", question: '"혼잡"의 뜻은 무엇입니까?', options: ["Population", "Convenience", "Congestion", "Environment"], correctAnswer: 2, explanation: { en: "혼잡 means congestion." } },
   { id: "L3-S9-P02", type: "vocabulary", question: '"대중교통"의 뜻은 무엇입니까?', options: ["Public transportation", "Private car", "Parking", "Bicycle"], correctAnswer: 0, explanation: { en: "대중교통 means public transportation." } },
   { id: "L3-S9-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n버스가 편리______ 사람이 많아요.", options: ["한데", "기 때문에", "고 나서", "는 동안"], correctAnswer: 0, explanation: { en: "-는데 gives background before a comment: 편리한데." } },
   { id: "L3-S9-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n도시는 편리한 ______ 교통이 복잡해요.", options: ["때문에", "동안에", "반면에", "덕분에"], correctAnswer: 2, explanation: { en: "-는 반면에 contrasts two sides: 편리한 반면에." } },

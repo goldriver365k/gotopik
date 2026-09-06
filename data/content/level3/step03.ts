@@ -78,8 +78,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "차가 막혔기 때문에 늦었어요.",
     audioUrl: null,
     question: "왜 늦었습니까?",
-    options: ["차가 막혀서", "길을 몰라서", "늦게 일어나서", "버스를 놓쳐서"],
-    correctAnswer: 0,
+    options: ["길을 몰라서", "버스를 놓쳐서", "늦게 일어나서", "차가 막혀서"],
+    correctAnswer: 3,
     translations: { en: { question: "Why were they late?", explanation: 'The sentence says "because the traffic was jammed," so the correct answer is 차가 막혀서.' } },
   },
   {
@@ -87,8 +87,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "갑자기 문제가 생겨서 회의가 취소됐어요.",
     audioUrl: null,
     question: "회의가 왜 취소됐습니까?",
-    options: ["갑자기 문제가 생겨서", "사람이 없어서", "장소가 없어서", "시간이 늦어서"],
-    correctAnswer: 0,
+    options: ["장소가 없어서", "사람이 없어서", "갑자기 문제가 생겨서", "시간이 늦어서"],
+    correctAnswer: 2,
     translations: { en: { question: "Why was the meeting canceled?", explanation: 'The sentence says "a problem suddenly came up," so the correct answer is 갑자기 문제가 생겨서.' } },
   },
   {
@@ -108,8 +108,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "오늘 아침에 길이 많이 막혔어요.\n그래서 학교에 늦게 도착했어요.\n선생님께 늦은 이유를 설명했어요.\n다음부터는 더 일찍 나오려고 해요.",
     question: "이 사람은 왜 학교에 늦었습니까?",
-    options: ["길이 막혀서", "버스를 놓쳐서", "늦게 일어나서", "숙제를 못 해서"],
-    correctAnswer: 0,
+    options: ["버스를 놓쳐서", "길이 막혀서", "늦게 일어나서", "숙제를 못 해서"],
+    correctAnswer: 1,
     translations: { en: { question: "Why were they late for school?", explanation: "The passage says the road was jammed, so the correct answer is 길이 막혀서." } },
   },
   {
@@ -117,8 +117,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "저는 발표에서 실수를 했어요.\n그 실수 때문에 사람들이 이해하지 못했어요.\n그래서 발표가 끝난 후에 다시 설명했어요.",
     question: "왜 다시 설명했습니까?",
-    options: ["실수 때문에 사람들이 이해하지 못해서", "시간이 남아서", "선생님이 시켜서", "재미있어서"],
-    correctAnswer: 0,
+    options: ["선생님이 시켜서", "시간이 남아서", "재미있어서", "실수 때문에 사람들이 이해하지 못해서"],
+    correctAnswer: 3,
     translations: { en: { question: "Why did they explain again?", explanation: "The passage says people didn't understand because of the mistake, so the correct answer is 실수 때문에 사람들이 이해하지 못해서." } },
   },
   {
@@ -156,12 +156,12 @@ const WRITING: WritingItem[] = [
 const PRACTICE: PracticeQuestionData[] = [
   { id: "L3-S3-P01", type: "vocabulary", question: '"원인"의 뜻은 무엇입니까?', options: ["Decision", "Result", "Problem", "Cause"], correctAnswer: 3, explanation: { en: "원인 means cause." } },
   { id: "L3-S3-P02", type: "vocabulary", question: '"해결하다"의 뜻은 무엇입니까?', options: ["To cancel", "To resolve/solve", "To explain", "To change"], correctAnswer: 1, explanation: { en: "해결하다 means to resolve/solve." } },
-  { id: "L3-S3-P03", type: "vocabulary", question: "잘못해서 생긴 작은 잘못을 무엇이라고 합니까?", options: ["실수", "결과", "선택", "상황"], correctAnswer: 0, explanation: { en: "실수 means mistake." } },
-  { id: "L3-S3-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n차가 막혔______ 늦었어요.", options: ["기 때문에", "고 나서", "는 동안", "기 위해서"], correctAnswer: 0, explanation: { en: "-기 때문에 gives the reason: 막혔기 때문에." } },
-  { id: "L3-S3-P05", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n실수했______ 다시 설명해야 해요.", options: ["기 때문에", "고 나서", "기 위해서", "는데"], correctAnswer: 0, explanation: { en: "-기 때문에 gives the reason: 실수했기 때문에." } },
-  { id: "L3-S3-P06", type: "grammar", question: "다음 중 두 가지 행동을 순서대로 연결할 때 더 자연스러운 것은?", options: ["길이 막혀서 늦었어요.", "길이 막히기 때문에 늦었어요만.", "길이 막혔지만 늦었어요.", "길이 막히려고 늦었어요."], correctAnswer: 0, explanation: { en: "-아서/어서 naturally connects a reason to its direct result: 막혀서 늦었어요." } },
-  { id: "L3-S3-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n비가 왔어요. ______ 우산을 샀어요.", options: ["그래서", "그러면", "그런데", "그리고"], correctAnswer: 0, explanation: { en: "그래서 means \"so/therefore.\"" } },
-  { id: "L3-S3-P08", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n다음부터는 ______ 연락해 주세요.", options: ["미리", "갑자기", "다시", "마지막으로"], correctAnswer: 0, explanation: { en: "미리 means \"in advance.\"" } },
+  { id: "L3-S3-P03", type: "vocabulary", question: "잘못해서 생긴 작은 잘못을 무엇이라고 합니까?", options: ["결과", "실수", "선택", "상황"], correctAnswer: 1, explanation: { en: "실수 means mistake." } },
+  { id: "L3-S3-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n차가 막혔______ 늦었어요.", options: ["고 나서", "기 때문에", "는 동안", "기 위해서"], correctAnswer: 1, explanation: { en: "-기 때문에 gives the reason: 막혔기 때문에." } },
+  { id: "L3-S3-P05", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n실수했______ 다시 설명해야 해요.", options: ["기 위해서", "고 나서", "는데", "기 때문에"], correctAnswer: 3, explanation: { en: "-기 때문에 gives the reason: 실수했기 때문에." } },
+  { id: "L3-S3-P06", type: "grammar", question: "다음 중 두 가지 행동을 순서대로 연결할 때 더 자연스러운 것은?", options: ["길이 막혔지만 늦었어요.", "길이 막히기 때문에 늦었어요만.", "길이 막혀서 늦었어요.", "길이 막히려고 늦었어요."], correctAnswer: 2, explanation: { en: "-아서/어서 naturally connects a reason to its direct result: 막혀서 늦었어요." } },
+  { id: "L3-S3-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n비가 왔어요. ______ 우산을 샀어요.", options: ["그런데", "그러면", "그래서", "그리고"], correctAnswer: 2, explanation: { en: "그래서 means \"so/therefore.\"" } },
+  { id: "L3-S3-P08", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n다음부터는 ______ 연락해 주세요.", options: ["마지막으로", "갑자기", "다시", "미리"], correctAnswer: 3, explanation: { en: "미리 means \"in advance.\"" } },
   { id: "L3-S3-P09", type: "listening", audioText: "갑자기 문제가 생겨서 일정을 변경했어요.", question: "왜 일정을 변경했습니까?", options: ["갑자기 문제가 생겨서", "시간이 남아서", "장소가 바뀌어서", "사람이 많아서"], correctAnswer: 0, explanation: { en: 'The sentence says "a problem suddenly came up," so the answer is 갑자기 문제가 생겨서.' } },
   { id: "L3-S3-P10", type: "reading", passage: "회사에서 문제가 발생했어요. 원인을 찾은 후에 해결했어요.", question: "문제를 해결하기 전에 먼저 무엇을 했습니까?", options: ["원인을 찾았어요", "회의를 취소했어요", "휴가를 갔어요", "다른 일을 시작했어요"], correctAnswer: 0, explanation: { en: 'The passage says they found the cause first, so the answer is 원인을 찾았어요.' } },
   { id: "L3-S3-P11", type: "reading", passage: "실수 때문에 사람들이 이해하지 못해서 다시 설명했어요.", question: "왜 다시 설명했습니까?", options: ["사람들이 이해하지 못해서", "시간이 남아서", "재미있어서", "부탁받아서"], correctAnswer: 0, explanation: { en: 'The passage says people did not understand, so the answer is 사람들이 이해하지 못해서.' } },

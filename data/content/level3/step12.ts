@@ -117,8 +117,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "온라인 쇼핑은 편리하지만 충동구매를 하기 쉬워요.\n그래서 저는 물건을 사기 전에 꼭 필요한지 다시 생각해요.\n가격만큼 품질도 확인하고 구매를 결정해요.\n이렇게 하면 돈을 낭비하지 않을 수 있어요.",
     question: "이 사람은 구매 전에 무엇을 확인합니까?",
-    options: ["필요성과 품질", "브랜드 이름", "배송 속도", "포장 디자인"],
-    correctAnswer: 0,
+    options: ["포장 디자인", "브랜드 이름", "배송 속도", "필요성과 품질"],
+    correctAnswer: 3,
     translations: { en: { question: "What does this person check before buying?", explanation: "The passage says they check necessity and quality, so the correct answer is 필요성과 품질." } },
   },
   {

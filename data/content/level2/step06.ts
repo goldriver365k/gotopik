@@ -73,8 +73,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 호텔을 예약했어요.",
     audioUrl: null,
     question: "무엇을 예약했습니까?",
-    options: ["비행기", "표", "호텔", "관광"],
-    correctAnswer: 2,
+    options: ["호텔", "표", "비행기", "관광"],
+    correctAnswer: 0,
     translations: { en: { question: "What did they book?", explanation: 'The sentence says "I booked a hotel," so the correct answer is 호텔.' } },
   },
   {
@@ -91,8 +91,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 비행기를 타고 여행지에 도착했어요. 호텔에서 이틀 묵을 거예요.",
     audioUrl: null,
     question: "호텔에서 며칠 묵을 겁니까?",
-    options: ["하루", "일주일", "삼일", "이틀"],
-    correctAnswer: 3,
+    options: ["하루", "이틀", "삼일", "일주일"],
+    correctAnswer: 1,
     translations: { en: { question: "How many days will they stay at the hotel?", explanation: 'The sentence says "two days," so the correct answer is 이틀.' } },
   },
 ];
@@ -110,8 +110,8 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S6-R02",
     passage: "저는 공항에 아침 일찍 도착했어요.\n비행기는 아홉 시에 출발해요.",
     question: "비행기는 몇 시에 출발합니까?",
-    options: ["여덟 시", "일곱 시", "열 시", "아홉 시"],
-    correctAnswer: 3,
+    options: ["여덟 시", "아홉 시", "열 시", "일곱 시"],
+    correctAnswer: 1,
     translations: { en: { question: "What time does the plane depart?", explanation: 'The passage says "at nine o\'clock," so the correct answer is 아홉 시.' } },
   },
   {
@@ -125,11 +125,11 @@ const READING: ReadingQuestionData[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L2-S6-P01", type: "vocabulary", question: '"호텔"의 뜻은 무엇입니까?', options: ["Airplane", "Airport", "Ticket", "Hotel"], correctAnswer: 3, explanation: { en: "호텔 means hotel." } },
+  { id: "L2-S6-P01", type: "vocabulary", question: '"호텔"의 뜻은 무엇입니까?', options: ["Hotel", "Airport", "Ticket", "Airplane"], correctAnswer: 0, explanation: { en: "호텔 means hotel." } },
   { id: "L2-S6-P02", type: "vocabulary", question: '"짐"의 뜻은 무엇입니까?', options: ["Plan", "Luggage", "Ticket", "Destination"], correctAnswer: 1, explanation: { en: "짐 means luggage." } },
   { id: "L2-S6-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n여행을 가___ 호텔을 예약했어요.", options: ["아서", "지만", "려고", "고"], correctAnswer: 2, explanation: { en: "-(으)려고 shows intention: 가려고." } },
-  { id: "L2-S6-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n호텔에서 이틀 ______.", options: ["묵어요", "묵었어요", "묵으세요", "묵을 거예요"], correctAnswer: 3, explanation: { en: "-(으)ㄹ 거예요 marks a future plan: 묵을 거예요." } },
-  { id: "L2-S6-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n저는 비행기를 ______ 여행지에 도착했어요.", options: ["타려고", "타서", "타지만", "타고"], correctAnswer: 3, explanation: { en: "-고 connects two actions: 타고 도착했어요." } },
+  { id: "L2-S6-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n호텔에서 이틀 ______.", options: ["묵을 거예요", "묵었어요", "묵으세요", "묵어요"], correctAnswer: 0, explanation: { en: "-(으)ㄹ 거예요 marks a future plan: 묵을 거예요." } },
+  { id: "L2-S6-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n저는 비행기를 ______ 여행지에 도착했어요.", options: ["타고", "타서", "타지만", "타려고"], correctAnswer: 0, explanation: { en: "-고 connects two actions: 타고 도착했어요." } },
   { id: "L2-S6-P06", type: "sentence", question: "호텔에 며칠 있을지 물을 때 하는 말은?", options: ["얼마예요?", "며칠 묵을 거예요?", "어디예요?", "누구예요?"], correctAnswer: 1, explanation: { en: "며칠 묵을 거예요? asks how many days someone will stay." } },
   { id: "L2-S6-P07", type: "vocabulary", question: "여행 가기 전에 옷과 물건을 넣는 것은?", options: ["예약해요", "계획해요", "짐을 싸요", "도착해요"], correctAnswer: 2, explanation: { en: "짐을 싸요 means to pack luggage." } },
   { id: "L2-S6-P08", type: "listening", audioText: "저는 호텔을 예약했어요.", question: "무엇을 예약했습니까?", options: ["비행기", "표", "관광", "호텔"], correctAnswer: 3, explanation: { en: 'The sentence says "I booked a hotel," so the answer is 호텔.' } },

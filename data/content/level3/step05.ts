@@ -91,8 +91,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "지갑을 잃어버렸어요. 그런데 친구가 찾아 줘서 다행이에요.",
     audioUrl: null,
     question: "왜 다행이라고 했습니까?",
-    options: ["지갑을 새로 사서", "친구가 찾아 줘서", "돈이 많아서", "지갑이 필요 없어서"],
-    correctAnswer: 1,
+    options: ["친구가 찾아 줘서", "지갑을 새로 사서", "돈이 많아서", "지갑이 필요 없어서"],
+    correctAnswer: 0,
     translations: { en: { question: "Why did they say it was a relief?", explanation: 'The sentence says "my friend found it," so the correct answer is 친구가 찾아 줘서.' } },
   },
   {
@@ -100,8 +100,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "세탁기에 문제가 생기면 먼저 전원을 확인하는 게 좋아요. 그래도 안 되면 수리를 요청하세요.",
     audioUrl: null,
     question: "세탁기에 문제가 생기면 먼저 무엇을 해야 합니까?",
-    options: ["새 것을 사요", "전원을 확인해요", "수리를 요청해요", "그냥 기다려요"],
-    correctAnswer: 1,
+    options: ["새 것을 사요", "그냥 기다려요", "수리를 요청해요", "전원을 확인해요"],
+    correctAnswer: 3,
     translations: { en: { question: "What should be done first if there's a problem with the washing machine?", explanation: 'The sentence says to check the power first, so the correct answer is 전원을 확인해요.' } },
   },
 ];
@@ -112,8 +112,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "어제 냉장고가 고장났어요.\n음식이 상할까 봐 걱정했어요.\n바로 수리 센터에 연락해서 요청했어요.\n오늘 아침에 수리 기사님이 오셔서 고쳐 주셨어요.",
     question: "이 사람은 냉장고가 고장난 후에 무엇을 했습니까?",
-    options: ["그냥 기다렸어요", "새 냉장고를 샀어요", "수리 센터에 연락했어요", "음식을 버렸어요"],
-    correctAnswer: 2,
+    options: ["수리 센터에 연락했어요", "새 냉장고를 샀어요", "그냥 기다렸어요", "음식을 버렸어요"],
+    correctAnswer: 0,
     translations: { en: { question: "What did they do after the fridge broke down?", explanation: "The passage says they contacted the repair center, so the correct answer is 수리 센터에 연락했어요." } },
   },
   {
@@ -121,8 +121,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "지하철에서 지갑을 잃어버렸어요.\n너무 걱정이 됐지만 역무원에게 상황을 설명했어요.\n역무원이 도와줘서 지갑을 다시 찾았어요.\n정말 다행이었어요.",
     question: "지갑을 찾을 수 있었던 이유는 무엇입니까?",
-    options: ["혼자 다시 찾아서", "경찰에게 연락해서", "역무원이 도와줘서", "친구가 찾아 줘서"],
-    correctAnswer: 2,
+    options: ["혼자 다시 찾아서", "역무원이 도와줘서", "경찰에게 연락해서", "친구가 찾아 줘서"],
+    correctAnswer: 1,
     translations: { en: { question: "Why were they able to find the wallet?", explanation: "The passage says the station staff helped, so the correct answer is 역무원이 도와줘서." } },
   },
   {
@@ -130,8 +130,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "요즘 회사 프린터가 자주 고장나요.\n먼저 원인을 확인했더니 부품이 오래됐어요.\n그래서 부품을 새것으로 바꾸기로 했어요.\n문제가 생기면 참지 말고 바로 요청하는 게 좋아요.",
     question: "프린터가 고장나는 원인은 무엇이었습니까?",
-    options: ["종이 부족", "전기 문제", "오래된 부품", "사용자의 실수"],
-    correctAnswer: 2,
+    options: ["종이 부족", "전기 문제", "사용자의 실수", "오래된 부품"],
+    correctAnswer: 3,
     translations: { en: { question: "What was the cause of the printer breaking down?", explanation: "The passage says the part was old, so the correct answer is 오래된 부품." } },
   },
 ];
@@ -161,12 +161,12 @@ const WRITING: WritingItem[] = [
 const PRACTICE: PracticeQuestionData[] = [
   { id: "L3-S5-P01", type: "vocabulary", question: '"고장나다"의 뜻은 무엇입니까?', options: ["To help", "To fix", "To break down", "To request"], correctAnswer: 2, explanation: { en: "고장나다 means to break down." } },
   { id: "L3-S5-P02", type: "vocabulary", question: '"해결책"의 뜻은 무엇입니까?', options: ["Problem", "Solution", "Mistake", "Request"], correctAnswer: 1, explanation: { en: "해결책 means solution." } },
-  { id: "L3-S5-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n버스를 놓치______ 지하철을 타세요.", options: ["고 나서", "기 때문에", "으면", "는 동안"], correctAnswer: 2, explanation: { en: "-(으)면 states a condition: 놓치면." } },
-  { id: "L3-S5-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n문제가 있으면 직원에게 ______.", options: ["물어볼 거예요", "물어봤어요", "물어보는 게 좋아요", "물어보지 마세요"], correctAnswer: 2, explanation: { en: "-는 게 좋다 gives gentle advice: 물어보는 게 좋아요." } },
-  { id: "L3-S5-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n지갑을 ______ 역무원에게 물어보세요.", options: ["잃어버리고 나서", "잃어버려서", "잃어버리면", "잃어버리는 동안"], correctAnswer: 2, explanation: { en: "-(으)면 fits a conditional situation: 잃어버리면." } },
-  { id: "L3-S5-P06", type: "vocabulary", question: "무엇이 필요할 때 다른 사람에게 부탁하는 말은?", options: ["확인했어요", "고쳤어요", "도와주세요", "바꿨어요"], correctAnswer: 2, explanation: { en: "도와주세요 means \"please help me.\"" } },
-  { id: "L3-S5-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n고장이 아니라서 정말 ______.", options: ["불편해요", "걱정이에요", "다행이에요", "필요해요"], correctAnswer: 2, explanation: { en: "다행이에요 means \"it's a relief.\"" } },
-  { id: "L3-S5-P08", type: "listening", audioText: "컴퓨터가 고장나서 수리 센터에 연락했어요.", question: "왜 수리 센터에 연락했습니까?", options: ["가격을 물어보려고", "컴퓨터를 사려고", "컴퓨터가 고장나서", "친구를 만나려고"], correctAnswer: 2, explanation: { en: 'The sentence says "the computer broke down," so the answer is 컴퓨터가 고장나서.' } },
+  { id: "L3-S5-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n버스를 놓치______ 지하철을 타세요.", options: ["으면", "기 때문에", "고 나서", "는 동안"], correctAnswer: 0, explanation: { en: "-(으)면 states a condition: 놓치면." } },
+  { id: "L3-S5-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n문제가 있으면 직원에게 ______.", options: ["물어보는 게 좋아요", "물어봤어요", "물어볼 거예요", "물어보지 마세요"], correctAnswer: 0, explanation: { en: "-는 게 좋다 gives gentle advice: 물어보는 게 좋아요." } },
+  { id: "L3-S5-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n지갑을 ______ 역무원에게 물어보세요.", options: ["잃어버리고 나서", "잃어버리면", "잃어버려서", "잃어버리는 동안"], correctAnswer: 1, explanation: { en: "-(으)면 fits a conditional situation: 잃어버리면." } },
+  { id: "L3-S5-P06", type: "vocabulary", question: "무엇이 필요할 때 다른 사람에게 부탁하는 말은?", options: ["확인했어요", "도와주세요", "고쳤어요", "바꿨어요"], correctAnswer: 1, explanation: { en: "도와주세요 means \"please help me.\"" } },
+  { id: "L3-S5-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n고장이 아니라서 정말 ______.", options: ["불편해요", "걱정이에요", "필요해요", "다행이에요"], correctAnswer: 3, explanation: { en: "다행이에요 means \"it's a relief.\"" } },
+  { id: "L3-S5-P08", type: "listening", audioText: "컴퓨터가 고장나서 수리 센터에 연락했어요.", question: "왜 수리 센터에 연락했습니까?", options: ["가격을 물어보려고", "컴퓨터를 사려고", "친구를 만나려고", "컴퓨터가 고장나서"], correctAnswer: 3, explanation: { en: 'The sentence says "the computer broke down," so the answer is 컴퓨터가 고장나서.' } },
   { id: "L3-S5-P09", type: "reading", passage: "지갑을 잃어버렸지만 역무원이 도와줘서 다시 찾았어요.", question: "지갑을 찾을 수 있었던 이유는 무엇입니까?", options: ["경찰에게 연락해서", "친구가 찾아서", "역무원이 도와줘서", "혼자 찾아서"], correctAnswer: 2, explanation: { en: 'The passage says the station staff helped, so the answer is 역무원이 도와줘서.' } },
   { id: "L3-S5-P10", type: "reading", passage: "프린터가 고장나는 원인은 오래된 부품이었어요.", question: "프린터가 고장난 원인은 무엇입니까?", options: ["종이 부족", "전기 문제", "오래된 부품", "사용자 실수"], correctAnswer: 2, explanation: { en: 'The passage says the cause was an old part, so the answer is 오래된 부품.' } },
 ];

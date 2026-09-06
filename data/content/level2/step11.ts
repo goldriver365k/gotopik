@@ -82,8 +82,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "번호표를 받고 창구 앞에서 기다리세요.",
     audioUrl: null,
     question: "무엇을 먼저 해야 합니까?",
-    options: ["서류 작성", "돈 내기", "이름 쓰기", "번호표 받기"],
-    correctAnswer: 3,
+    options: ["서류 작성", "돈 내기", "번호표 받기", "이름 쓰기"],
+    correctAnswer: 2,
     translations: { en: { question: "What should be done first?", explanation: 'The sentence says "take a number ticket," so the correct answer is 번호표 받기.' } },
   },
   {
@@ -102,8 +102,8 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S11-R01",
     passage: "이 서비스는 인터넷으로 신청할 수 있어요.\n서류는 필요 없어요.",
     question: "이 서비스를 신청할 때 무엇이 필요합니까?",
-    options: ["서류", "번호표", "인터넷", "이름과 주소만"],
-    correctAnswer: 2,
+    options: ["서류", "번호표", "이름과 주소만", "인터넷"],
+    correctAnswer: 3,
     translations: { en: { question: "What is needed to apply for this service?", explanation: "The passage says you can apply online with no documents needed, so the correct answer is 인터넷." } },
   },
   {
@@ -125,12 +125,12 @@ const READING: ReadingQuestionData[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L2-S11-P01", type: "vocabulary", question: '"서류"의 뜻은 무엇입니까?', options: ["Number", "Document", "Address", "Name"], correctAnswer: 1, explanation: { en: "서류 means document." } },
+  { id: "L2-S11-P01", type: "vocabulary", question: '"서류"의 뜻은 무엇입니까?', options: ["Number", "Name", "Address", "Document"], correctAnswer: 3, explanation: { en: "서류 means document." } },
   { id: "L2-S11-P02", type: "vocabulary", question: '"작성하다"의 뜻은 무엇입니까?', options: ["To send", "To receive", "To fill out", "To find"], correctAnswer: 2, explanation: { en: "작성하다 means to fill out / write." } },
-  { id: "L2-S11-P03", type: "vocabulary", question: "번호를 뽑고 순서를 기다릴 때 받는 것은?", options: ["서류", "번호표", "주소", "이름"], correctAnswer: 1, explanation: { en: "번호표 means number ticket." } },
-  { id: "L2-S11-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n인터넷으로 신청 ______.", options: ["할 수 있어요", "했어요", "하지 마세요", "할 거예요"], correctAnswer: 0, explanation: { en: "-(으)ㄹ 수 있다 shows possibility: 할 수 있어요." } },
+  { id: "L2-S11-P03", type: "vocabulary", question: "번호를 뽑고 순서를 기다릴 때 받는 것은?", options: ["서류", "이름", "주소", "번호표"], correctAnswer: 3, explanation: { en: "번호표 means number ticket." } },
+  { id: "L2-S11-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n인터넷으로 신청 ______.", options: ["하지 마세요", "했어요", "할 수 있어요", "할 거예요"], correctAnswer: 2, explanation: { en: "-(으)ㄹ 수 있다 shows possibility: 할 수 있어요." } },
   { id: "L2-S11-P05", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이 창구에서는 접수 ______.", options: ["할 수 있어요", "할 수 없어요", "하고 있어요", "했어요"], correctAnswer: 1, explanation: { en: "-(으)ㄹ 수 없다 shows impossibility: 할 수 없어요." } },
-  { id: "L2-S11-P06", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이름과 주소를 ______.", options: ["써야 해요", "써 보세요", "쓰고 있어요", "쓸 거예요"], correctAnswer: 0, explanation: { en: "-아/어야 하다 shows necessity: 써야 해요." } },
+  { id: "L2-S11-P06", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이름과 주소를 ______.", options: ["쓰고 있어요", "써 보세요", "써야 해요", "쓸 거예요"], correctAnswer: 2, explanation: { en: "-아/어야 하다 shows necessity: 써야 해요." } },
   { id: "L2-S11-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n번호표를 ______ 기다리세요.", options: ["받고", "받아서", "받는데", "받으면서"], correctAnswer: 0, explanation: { en: "받고 connects two actions in order: 받고 기다리세요." } },
   { id: "L2-S11-P08", type: "listening", audioText: "서류를 창구에 제출하세요.", question: "서류는 어디에 제출해야 합니까?", options: ["은행", "창구", "학교", "우체국"], correctAnswer: 1, explanation: { en: 'The sentence says "at the counter," so the answer is 창구.' } },
   { id: "L2-S11-P09", type: "reading", passage: "이 서비스는 인터넷으로 신청할 수 있어요.", question: "이 서비스는 어떻게 신청합니까?", options: ["전화로", "인터넷으로", "우편으로", "방문해서"], correctAnswer: 1, explanation: { en: 'The passage says "online," so the answer is 인터넷으로.' } },

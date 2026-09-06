@@ -244,8 +244,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 김치를 좋아해요.",
     audioUrl: null,
     question: "저는 무엇을 좋아합니까?",
-    options: ["커피", "물", "김치", "고기"],
-    correctAnswer: 2,
+    options: ["커피", "김치", "물", "고기"],
+    correctAnswer: 1,
     translations: {
       en: {
         question: "What do they like?",
@@ -274,8 +274,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S4-R01",
     passage: "저는 식당에 가요.\n저는 밥과 고기를 먹어요.",
     question: "저는 무엇을 먹습니까?",
-    options: ["밥과 고기", "과일", "커피", "김치"],
-    correctAnswer: 0,
+    options: ["과일", "밥과 고기", "커피", "김치"],
+    correctAnswer: 1,
     translations: {
       en: {
         question: "What do they eat?",

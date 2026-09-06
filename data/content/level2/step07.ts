@@ -101,16 +101,16 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S7-R01",
     passage: "이 신발은 작아요.\n그래서 큰 사이즈로 교환했어요.",
     question: "왜 교환했습니까?",
-    options: ["비싸서", "예뻐서", "더러워서", "작아서"],
-    correctAnswer: 3,
+    options: ["작아서", "예뻐서", "더러워서", "비싸서"],
+    correctAnswer: 0,
     translations: { en: { question: "Why did they exchange?", explanation: 'The passage says the shoes were small, so the correct answer is 작아서.' } },
   },
   {
     id: "L2-S7-R02",
     passage: "이 옷은 할인 중이에요.\n원래 가격보다 싸요.",
     question: "이 옷은 지금 어떻습니까?",
-    options: ["더 비싸요", "교환했어요", "환불했어요", "할인해서 싸요"],
-    correctAnswer: 3,
+    options: ["더 비싸요", "할인해서 싸요", "환불했어요", "교환했어요"],
+    correctAnswer: 1,
     translations: { en: { question: "How are the clothes right now?", explanation: 'The passage says they are discounted and cheap, so the correct answer is 할인해서 싸요.' } },
   },
   {
@@ -124,10 +124,10 @@ const READING: ReadingQuestionData[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L2-S7-P01", type: "vocabulary", question: '"할인"의 뜻은 무엇입니까?', options: ["Refund", "Receipt", "Exchange", "Discount"], correctAnswer: 3, explanation: { en: "할인 means discount." } },
+  { id: "L2-S7-P01", type: "vocabulary", question: '"할인"의 뜻은 무엇입니까?', options: ["Exchange", "Receipt", "Discount", "Refund"], correctAnswer: 2, explanation: { en: "할인 means discount." } },
   { id: "L2-S7-P02", type: "vocabulary", question: '"고르다"의 뜻은 무엇입니까?', options: ["To fit", "To choose", "To exchange", "To refund"], correctAnswer: 1, explanation: { en: "고르다 means to choose." } },
   { id: "L2-S7-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이 가방이 저 가방___ 싸요.", options: ["에서", "와", "보다", "도"], correctAnswer: 2, explanation: { en: "-보다 makes a comparison: 가방보다 싸요." } },
-  { id: "L2-S7-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이 옷을 ______ 보세요.", options: ["입고", "입지만", "입으려고", "입어"], correctAnswer: 3, explanation: { en: "-아/어 보다 means to try: 입어 보세요." } },
+  { id: "L2-S7-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n이 옷을 ______ 보세요.", options: ["입어", "입지만", "입으려고", "입고"], correctAnswer: 0, explanation: { en: "-아/어 보다 means to try: 입어 보세요." } },
   { id: "L2-S7-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n이 신발은 ______.", options: ["같아요", "커요", "맞아요", "작아요"], correctAnswer: 3, explanation: { en: "작아요 means small." } },
   { id: "L2-S7-P06", type: "sentence", question: "옷이 안 맞아서 다른 사이즈로 바꾸고 싶을 때 하는 말은?", options: ["감사합니다", "교환하고 싶어요", "맛있어요", "안녕하세요"], correctAnswer: 1, explanation: { en: "교환하고 싶어요 means 'I want to exchange it'." } },
   { id: "L2-S7-P07", type: "vocabulary", question: "영수증이 있고 물건을 사용하지 않았을 때 요청할 수 있는 것은?", options: ["할인", "교환", "환불", "고르기"], correctAnswer: 2, explanation: { en: "환불 (refund) can be requested with a receipt for unused items." } },

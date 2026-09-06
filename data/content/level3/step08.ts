@@ -84,8 +84,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "가: 회의 시간이 바뀌었어요? 나: 네, 두 시에서 세 시로 변경하기로 했어요.",
     audioUrl: null,
     question: "회의 시간이 어떻게 바뀌었습니까?",
-    options: ["두 시에서 세 시로", "세 시에서 네 시로", "한 시에서 두 시로", "취소됐어요"],
-    correctAnswer: 0,
+    options: ["세 시에서 네 시로", "두 시에서 세 시로", "한 시에서 두 시로", "취소됐어요"],
+    correctAnswer: 1,
     translations: { en: { question: "How was the meeting time changed?", explanation: 'The reply says "changed from two to three," so the correct answer is 두 시에서 세 시로.' } },
   },
   {
@@ -93,8 +93,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "오늘까지 보고서를 제출해야 돼요. 그래서 지금 열심히 작성하고 있어요.",
     audioUrl: null,
     question: "이 사람은 지금 무엇을 하고 있습니까?",
-    options: ["보고서를 작성하고 있어요", "회의를 하고 있어요", "출장을 가고 있어요", "휴가를 가고 있어요"],
-    correctAnswer: 0,
+    options: ["출장을 가고 있어요", "회의를 하고 있어요", "보고서를 작성하고 있어요", "휴가를 가고 있어요"],
+    correctAnswer: 2,
     translations: { en: { question: "What are they doing right now?", explanation: 'The sentence says "writing the report," so the correct answer is 보고서를 작성하고 있어요.' } },
   },
   {
@@ -114,8 +114,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "메모: 내일 오전 열 시에 팀 회의가 있습니다.\n회의 자료는 오늘까지 준비해 주세요.\n회의 장소는 삼 층 회의실로 변경됐습니다.",
     question: "회의 장소는 어디로 바뀌었습니까?",
-    options: ["삼 층 회의실", "이 층 회의실", "사무실", "휴게실"],
-    correctAnswer: 0,
+    options: ["이 층 회의실", "삼 층 회의실", "사무실", "휴게실"],
+    correctAnswer: 1,
     translations: { en: { question: "Where was the meeting moved to?", explanation: "The memo says the third floor meeting room, so the correct answer is 삼 층 회의실." } },
   },
   {
@@ -123,8 +123,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "저는 이번 프로젝트를 맡기로 했어요.\n마감이 얼마 안 남아서 동료와 협력해서 진행하고 있어요.\n각자 담당한 부분을 완료한 후에 자료를 모으기로 했어요.",
     question: "이 사람은 프로젝트를 어떻게 진행하고 있습니까?",
-    options: ["동료와 협력해서", "혼자서", "다른 팀에게 맡겨서", "상사에게 부탁해서"],
-    correctAnswer: 0,
+    options: ["다른 팀에게 맡겨서", "혼자서", "동료와 협력해서", "상사에게 부탁해서"],
+    correctAnswer: 2,
     translations: { en: { question: "How are they carrying out the project?", explanation: "The passage says they cooperate with a coworker, so the correct answer is 동료와 협력해서." } },
   },
   {
@@ -132,8 +132,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "요즘 업무가 많아서 야근하는 날이 늘었어요.\n그래서 상사에게 마감을 연장해 달라고 요청했어요.\n다행히 마감이 일주일 연장돼서 조금 여유가 생겼어요.\n앞으로는 일정을 더 잘 관리하려고 해요.",
     question: "마감이 연장된 후 이 사람은 어떻게 됐습니까?",
-    options: ["조금 여유가 생겼어요", "일이 더 많아졌어요", "휴가를 갔어요", "팀을 옮겼어요"],
-    correctAnswer: 0,
+    options: ["팀을 옮겼어요", "일이 더 많아졌어요", "휴가를 갔어요", "조금 여유가 생겼어요"],
+    correctAnswer: 3,
     translations: { en: { question: "What happened after the deadline was extended?", explanation: "The passage says they got a bit of breathing room, so the correct answer is 조금 여유가 생겼어요." } },
   },
 ];
@@ -158,13 +158,13 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S8-P01", type: "vocabulary", question: '"담당"의 뜻은 무엇입니까?', options: ["Being in charge (of)", "Deadline", "Report", "Team"], correctAnswer: 0, explanation: { en: "담당 means being in charge (of)." } },
+  { id: "L3-S8-P01", type: "vocabulary", question: '"담당"의 뜻은 무엇입니까?', options: ["Deadline", "Being in charge (of)", "Report", "Team"], correctAnswer: 1, explanation: { en: "담당 means being in charge (of)." } },
   { id: "L3-S8-P02", type: "vocabulary", question: '"완료하다"의 뜻은 무엇입니까?', options: ["To start", "To complete", "To delay", "To cancel"], correctAnswer: 1, explanation: { en: "완료하다 means to complete." } },
-  { id: "L3-S8-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n내일 회의를 ______.", options: ["하기로 했어요", "하는 동안이에요", "하기 쉬워요", "하지 마세요"], correctAnswer: 0, explanation: { en: "-기로 하다 shows a decision: 하기로 했어요." } },
-  { id: "L3-S8-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n오늘 보고서를 ______.", options: ["작성해야 돼요", "작성하기로 해요", "작성하는 게 좋아요", "작성해 봤어요"], correctAnswer: 0, explanation: { en: "-아/어야 되다 means \"must\": 작성해야 돼요." } },
-  { id: "L3-S8-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n이번 프로젝트는 제가 ______.", options: ["맡기로 했어요", "맡는 동안이에요", "맡기 쉬워요", "맡지 마세요"], correctAnswer: 0, explanation: { en: "맡기로 했어요 means \"decided to take charge of.\"" } },
+  { id: "L3-S8-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n내일 회의를 ______.", options: ["하기 쉬워요", "하는 동안이에요", "하기로 했어요", "하지 마세요"], correctAnswer: 2, explanation: { en: "-기로 하다 shows a decision: 하기로 했어요." } },
+  { id: "L3-S8-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n오늘 보고서를 ______.", options: ["작성하는 게 좋아요", "작성하기로 해요", "작성해야 돼요", "작성해 봤어요"], correctAnswer: 2, explanation: { en: "-아/어야 되다 means \"must\": 작성해야 돼요." } },
+  { id: "L3-S8-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n이번 프로젝트는 제가 ______.", options: ["맡지 마세요", "맡는 동안이에요", "맡기 쉬워요", "맡기로 했어요"], correctAnswer: 3, explanation: { en: "맡기로 했어요 means \"decided to take charge of.\"" } },
   { id: "L3-S8-P06", type: "vocabulary", question: "회사에서 나보다 직급이 높은 사람을 무엇이라고 합니까?", options: ["동료", "상사", "팀", "부서"], correctAnswer: 1, explanation: { en: "상사 means boss/superior." } },
-  { id: "L3-S8-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n마감을 일주일 ______.", options: ["연장했어요", "완료했어요", "전달했어요", "맡았어요"], correctAnswer: 0, explanation: { en: "연장했어요 means \"extended.\"" } },
+  { id: "L3-S8-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n마감을 일주일 ______.", options: ["맡았어요", "완료했어요", "전달했어요", "연장했어요"], correctAnswer: 3, explanation: { en: "연장했어요 means \"extended.\"" } },
   { id: "L3-S8-P08", type: "listening", audioText: "회의 시간을 두 시에서 세 시로 변경하기로 했어요.", question: "회의 시간이 어떻게 바뀌었습니까?", options: ["두 시에서 세 시로", "세 시에서 네 시로", "취소됐어요", "한 시로 당겨졌어요"], correctAnswer: 0, explanation: { en: 'The sentence says "changed from two to three," so the answer is 두 시에서 세 시로.' } },
   { id: "L3-S8-P09", type: "reading", passage: "동료와 협력해서 이번 프로젝트를 진행하고 있어요.", question: "이 사람은 프로젝트를 어떻게 진행하고 있습니까?", options: ["동료와 협력해서", "혼자서", "다른 팀에게 맡겨서", "상사가 대신해서"], correctAnswer: 0, explanation: { en: 'The passage says they cooperate with a coworker, so the answer is 동료와 협력해서.' } },
   { id: "L3-S8-P10", type: "reading", passage: "마감이 일주일 연장돼서 조금 여유가 생겼어요.", question: "마감이 연장된 후 어떻게 됐습니까?", options: ["조금 여유가 생겼어요", "더 바빠졌어요", "휴가를 갔어요", "일을 그만뒀어요"], correctAnswer: 0, explanation: { en: 'The passage says they got some breathing room, so the answer is 조금 여유가 생겼어요.' } },

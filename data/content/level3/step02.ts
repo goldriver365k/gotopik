@@ -85,8 +85,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "목표를 이루기 위해서 매일 연습하고 있어요.",
     audioUrl: null,
     question: "왜 매일 연습합니까?",
-    options: ["재미있어서", "시간이 많아서", "친구가 있어서", "목표를 이루기 위해서"],
-    correctAnswer: 3,
+    options: ["목표를 이루기 위해서", "시간이 많아서", "친구가 있어서", "재미있어서"],
+    correctAnswer: 0,
     translations: { en: { question: "Why do they practice every day?", explanation: 'The sentence says "in order to achieve their goal," so the correct answer is 목표를 이루기 위해서.' } },
   },
   {
@@ -94,8 +94,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 다음 달에 계획을 세우고 새로운 것에 도전하려고 해요.",
     audioUrl: null,
     question: "다음 달에 무엇을 하려고 합니까?",
-    options: ["집을 옮기려고 해요", "여행지를 결정하려고 해요", "일을 그만두려고 해요", "새로운 것에 도전하려고 해요"],
-    correctAnswer: 3,
+    options: ["집을 옮기려고 해요", "새로운 것에 도전하려고 해요", "일을 그만두려고 해요", "여행지를 결정하려고 해요"],
+    correctAnswer: 1,
     translations: { en: { question: "What do they intend to do next month?", explanation: 'The sentence says "try something new," so the correct answer is 새로운 것에 도전하려고 해요.' } },
   },
 ];
@@ -124,8 +124,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "저는 작년에 새로운 일에 도전하기로 결정했어요.\n처음에는 힘들었지만 계속 노력했어요.\n앞으로도 계속 노력해서 제 목표를 이루고 싶어요.",
     question: "이 사람은 앞으로 무엇을 하고 싶습니까?",
-    options: ["쉬고 싶어요", "도전을 그만두고 싶어요", "새 계획을 취소하고 싶어요", "계속 노력해서 목표를 이루고 싶어요"],
-    correctAnswer: 3,
+    options: ["쉬고 싶어요", "계속 노력해서 목표를 이루고 싶어요", "새 계획을 취소하고 싶어요", "도전을 그만두고 싶어요"],
+    correctAnswer: 1,
     translations: { en: { question: "What does this person want to do going forward?", explanation: "The passage says they want to keep making an effort to achieve their goal, so the correct answer is 계속 노력해서 목표를 이루고 싶어요." } },
   },
 ];
@@ -150,12 +150,12 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S2-P01", type: "vocabulary", question: '"목표"의 뜻은 무엇입니까?', options: ["Preparation", "Plan", "Future", "Goal"], correctAnswer: 3, explanation: { en: "목표 means goal." } },
-  { id: "L3-S2-P02", type: "vocabulary", question: '"도전하다"의 뜻은 무엇입니까?', options: ["To decide", "To try/challenge oneself", "To continue", "To achieve"], correctAnswer: 1, explanation: { en: "도전하다 means to try/challenge oneself." } },
-  { id: "L3-S2-P03", type: "vocabulary", question: "꿈이나 목표를 실제로 해냈을 때 쓰는 말은?", options: ["세우다", "이루다", "결정하다", "선택하다"], correctAnswer: 1, explanation: { en: "이루다 means to achieve." } },
-  { id: "L3-S2-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n저는 올해 시험을 ______.", options: ["보지 마세요", "보고 있어요", "본 적이 있어요", "보려고 해요"], correctAnswer: 3, explanation: { en: "-(으)려고 하다 shows intention: 보려고 해요." } },
-  { id: "L3-S2-P05", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n시험에 합격하______ 매일 연습해요.", options: ["는 동안", "고 나서", "기 때문에", "기 위해서"], correctAnswer: 3, explanation: { en: "-기 위해서 shows purpose: 합격하기 위해서." } },
-  { id: "L3-S2-P06", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n목표를 ______ 계속 노력해요.", options: ["이루는 동안", "이루고 나서", "이루기 때문에", "이루기 위해서"], correctAnswer: 3, explanation: { en: "-기 위해서 shows purpose: 이루기 위해서." } },
+  { id: "L3-S2-P01", type: "vocabulary", question: '"목표"의 뜻은 무엇입니까?', options: ["Goal", "Plan", "Future", "Preparation"], correctAnswer: 0, explanation: { en: "목표 means goal." } },
+  { id: "L3-S2-P02", type: "vocabulary", question: '"도전하다"의 뜻은 무엇입니까?', options: ["To try/challenge oneself", "To decide", "To continue", "To achieve"], correctAnswer: 0, explanation: { en: "도전하다 means to try/challenge oneself." } },
+  { id: "L3-S2-P03", type: "vocabulary", question: "꿈이나 목표를 실제로 해냈을 때 쓰는 말은?", options: ["세우다", "선택하다", "결정하다", "이루다"], correctAnswer: 3, explanation: { en: "이루다 means to achieve." } },
+  { id: "L3-S2-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n저는 올해 시험을 ______.", options: ["보려고 해요", "보고 있어요", "본 적이 있어요", "보지 마세요"], correctAnswer: 0, explanation: { en: "-(으)려고 하다 shows intention: 보려고 해요." } },
+  { id: "L3-S2-P05", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n시험에 합격하______ 매일 연습해요.", options: ["는 동안", "고 나서", "기 위해서", "기 때문에"], correctAnswer: 2, explanation: { en: "-기 위해서 shows purpose: 합격하기 위해서." } },
+  { id: "L3-S2-P06", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n목표를 ______ 계속 노력해요.", options: ["이루는 동안", "이루고 나서", "이루기 위해서", "이루기 때문에"], correctAnswer: 2, explanation: { en: "-기 위해서 shows purpose: 이루기 위해서." } },
   { id: "L3-S2-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n저는 새로운 계획을 ______.", options: ["느꼈어요", "잊었어요", "실패했어요", "세웠어요"], correctAnswer: 3, explanation: { en: "계획을 세우다 means to set a plan." } },
   { id: "L3-S2-P08", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n______ 더 열심히 할 거예요.", options: ["마지막으로", "지난주", "그때", "앞으로"], correctAnswer: 3, explanation: { en: "앞으로 means \"from now on.\"" } },
   { id: "L3-S2-P09", type: "listening", audioText: "저는 다음 달에 여행을 가려고 해요.", question: "이 사람은 무엇을 하려고 합니까?", options: ["시험을 보려고 해요", "여행을 가려고 해요", "이사하려고 해요", "일을 그만두려고 해요"], correctAnswer: 1, explanation: { en: 'The sentence says "intend to travel," so the answer is 여행을 가려고 해요.' } },

@@ -88,8 +88,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 SNS에서 본 정보를 바로 믿지 않아요. 먼저 출처를 확인해요.",
     audioUrl: null,
     question: "이 사람은 SNS 정보를 어떻게 이용합니까?",
-    options: ["다른 사람에게 물어봐요", "출처를 먼저 확인해요", "무시해요", "바로 믿어요"],
-    correctAnswer: 1,
+    options: ["다른 사람에게 물어봐요", "바로 믿어요", "무시해요", "출처를 먼저 확인해요"],
+    correctAnswer: 3,
     translations: { en: { question: "How does this person use SNS information?", explanation: "The sentence says they check the source first, so the correct answer is 출처를 먼저 확인해요." } },
   },
   {
@@ -118,8 +118,8 @@ const READING: ReadingQuestionData[] = [
     passage:
       "요즘 사람들은 뉴스보다 SNS로 소식을 더 빨리 접해요.\n하지만 SNS의 정보는 사실이 아닐 때도 있어요.\n그래서 정보를 공유하기 전에 사실인지 확인하는 것이 중요해요.\n저도 공유하기 전에 항상 다시 한번 확인해요.",
     question: "이 글에 따르면 무엇이 중요합니까?",
-    options: ["동영상을 만드는 것", "빨리 공유하는 것", "공유하기 전에 사실인지 확인하는 것", "댓글을 많이 다는 것"],
-    correctAnswer: 2,
+    options: ["동영상을 만드는 것", "빨리 공유하는 것", "댓글을 많이 다는 것", "공유하기 전에 사실인지 확인하는 것"],
+    correctAnswer: 3,
     translations: { en: { question: "According to this passage, what is important?", explanation: "The passage says checking facts before sharing is important, so the correct answer is 공유하기 전에 사실인지 확인하는 것." } },
   },
   {
@@ -155,7 +155,7 @@ const WRITING: WritingItem[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L3-S13-P01", type: "vocabulary", question: '"출처"의 뜻은 무엇입니까?', options: ["Source", "Comment", "Content", "Fact"], correctAnswer: 0, explanation: { en: "출처 means source." } },
+  { id: "L3-S13-P01", type: "vocabulary", question: '"출처"의 뜻은 무엇입니까?', options: ["Content", "Comment", "Source", "Fact"], correctAnswer: 2, explanation: { en: "출처 means source." } },
   { id: "L3-S13-P02", type: "vocabulary", question: '"공유하다"의 뜻은 무엇입니까?', options: ["To search", "To share", "To believe", "To check"], correctAnswer: 1, explanation: { en: "공유하다 means to share." } },
   { id: "L3-S13-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n인터넷이 편리______ 생각해요.", options: ["하다고", "해서", "하니까", "하는데"], correctAnswer: 0, explanation: { en: "-다고 생각하다 states an opinion: 편리하다고 생각해요." } },
   { id: "L3-S13-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n뉴스______ 내일 비가 온다고 합니다.", options: ["에 따르면", "때문에", "보다", "동안"], correctAnswer: 0, explanation: { en: "-에 따르면 introduces a source: 뉴스에 따르면." } },
