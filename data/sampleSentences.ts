@@ -1,5 +1,5 @@
 export type Sentence = {
-  id: number;
+  id: string;
   korean: string;
   translations: Record<string, string>;
   keyExpression: string;
@@ -11,7 +11,7 @@ export type Sentence = {
 // relatedWords link back to vocabulary introduced in the WORDS screen.
 export const SAMPLE_SENTENCES: Sentence[] = [
   {
-    id: 1,
+    id: "L1-S1-S01",
     korean: "저는 학생이에요.",
     translations: {
       en: "I am a student.",
@@ -30,7 +30,7 @@ export const SAMPLE_SENTENCES: Sentence[] = [
     audioUrl: null,
   },
   {
-    id: 2,
+    id: "L1-S1-S02",
     korean: "저는 학교에 가요.",
     translations: {
       en: "I go to school.",
@@ -49,7 +49,7 @@ export const SAMPLE_SENTENCES: Sentence[] = [
     audioUrl: null,
   },
   {
-    id: 3,
+    id: "L1-S1-S03",
     korean: "친구와 밥을 먹어요.",
     translations: {
       en: "I eat with my friend.",

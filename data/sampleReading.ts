@@ -4,7 +4,7 @@ export type ReadingTranslation = {
 };
 
 export type ReadingQuestionData = {
-  id: number;
+  id: string;
   passage: string;
   question: string;
   options: string[];
@@ -16,7 +16,7 @@ export type ReadingQuestionData = {
 // Reuses vocabulary and expressions from WORDS / SENTENCES / GRAMMAR / LISTENING.
 export const SAMPLE_READING: ReadingQuestionData[] = [
   {
-    id: 1,
+    id: "L1-S1-R01",
     passage:
       "저는 학생이에요.\n아침에 학교에 가요.\n학교에서 친구를 만나요.\n점심에 친구와 밥을 먹어요.",
     question: "이 사람은 아침에 어디에 가요?",

@@ -7,15 +7,19 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import SentenceCard from "@/components/SentenceCard";
-import { SAMPLE_SENTENCES } from "@/data/sampleSentences";
+import ContentPending from "@/components/ContentPending";
+import { getStepContent } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
 
 export default function SentencesPage() {
   const params = useParams<{ level: string; step: string }>();
+  const level = Number(params.level);
+  const step = Number(params.step);
   const lang = useLang();
-  useSaveProgress(Number(params.level), Number(params.step), "sentences");
+  useSaveProgress(level, step, "sentences");
+  const content = getStepContent(level, step);
 
   return (
     <>
@@ -32,9 +36,16 @@ export default function SentencesPage() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {SAMPLE_SENTENCES.map((sentence) => (
-            <SentenceCard key={sentence.id} sentence={sentence} lang={lang} />
-          ))}
+          {content && content.sentences.length > 0 ? (
+            content.sentences.map((sentence) => (
+              <SentenceCard key={sentence.id} sentence={sentence} lang={lang} />
+            ))
+          ) : (
+            <ContentPending
+              backHref={`/study/${params.level}/${params.step}`}
+              message="No sentences yet for this STEP."
+            />
+          )}
         </div>
 
         <div className="mt-2 flex flex-col gap-3">

@@ -7,15 +7,19 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import ReadingQuestion from "@/components/ReadingQuestion";
-import { SAMPLE_READING } from "@/data/sampleReading";
+import ContentPending from "@/components/ContentPending";
+import { getStepContent } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
 
 export default function ReadingPage() {
   const params = useParams<{ level: string; step: string }>();
+  const level = Number(params.level);
+  const step = Number(params.step);
   const lang = useLang();
-  useSaveProgress(Number(params.level), Number(params.step), "reading");
+  useSaveProgress(level, step, "reading");
+  const content = getStepContent(level, step);
 
   return (
     <>
@@ -32,9 +36,16 @@ export default function ReadingPage() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {SAMPLE_READING.map((question) => (
-            <ReadingQuestion key={question.id} data={question} lang={lang} />
-          ))}
+          {content && content.reading.length > 0 ? (
+            content.reading.map((question) => (
+              <ReadingQuestion key={question.id} data={question} lang={lang} />
+            ))
+          ) : (
+            <ContentPending
+              backHref={`/study/${params.level}/${params.step}/listening`}
+              message="No reading questions yet for this STEP."
+            />
+          )}
         </div>
 
         <div className="mt-2 flex flex-col gap-3">

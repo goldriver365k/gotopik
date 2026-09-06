@@ -7,15 +7,19 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import WordCard from "@/components/WordCard";
-import { SAMPLE_WORDS } from "@/data/sampleWords";
+import ContentPending from "@/components/ContentPending";
+import { getStepContent } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
 
 export default function WordsPage() {
   const params = useParams<{ level: string; step: string }>();
+  const level = Number(params.level);
+  const step = Number(params.step);
   const lang = useLang();
-  useSaveProgress(Number(params.level), Number(params.step), "words");
+  useSaveProgress(level, step, "words");
+  const content = getStepContent(level, step);
 
   return (
     <>
@@ -32,9 +36,13 @@ export default function WordsPage() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {SAMPLE_WORDS.map((word) => (
-            <WordCard key={word.id} word={word} lang={lang} />
-          ))}
+          {content && content.words.length > 0 ? (
+            content.words.map((word) => (
+              <WordCard key={word.id} word={word} lang={lang} />
+            ))
+          ) : (
+            <ContentPending backHref={`/level/${params.level}`} />
+          )}
         </div>
 
         <div className="mt-2 flex flex-col gap-3">

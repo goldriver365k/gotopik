@@ -4,7 +4,7 @@ export type GrammarExample = {
 };
 
 export type Grammar = {
-  id: number;
+  id: string;
   pattern: string;
   meanings: Record<string, string>;
   explanations: Record<string, string>;
@@ -15,7 +15,7 @@ export type Grammar = {
 // Reuses vocabulary and sentences already introduced in WORDS / SENTENCES.
 export const SAMPLE_GRAMMAR: Grammar[] = [
   {
-    id: 1,
+    id: "L1-S1-G01",
     pattern: "-에 가요",
     meanings: {
       en: "go to / going to",

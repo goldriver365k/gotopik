@@ -7,15 +7,19 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import GrammarCard from "@/components/GrammarCard";
-import { SAMPLE_GRAMMAR } from "@/data/sampleGrammar";
+import ContentPending from "@/components/ContentPending";
+import { getStepContent } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
 
 export default function GrammarPage() {
   const params = useParams<{ level: string; step: string }>();
+  const level = Number(params.level);
+  const step = Number(params.step);
   const lang = useLang();
-  useSaveProgress(Number(params.level), Number(params.step), "grammar");
+  useSaveProgress(level, step, "grammar");
+  const content = getStepContent(level, step);
 
   return (
     <>
@@ -32,9 +36,16 @@ export default function GrammarPage() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {SAMPLE_GRAMMAR.map((grammar) => (
-            <GrammarCard key={grammar.id} grammar={grammar} lang={lang} />
-          ))}
+          {content && content.grammar.length > 0 ? (
+            content.grammar.map((grammar) => (
+              <GrammarCard key={grammar.id} grammar={grammar} lang={lang} />
+            ))
+          ) : (
+            <ContentPending
+              backHref={`/study/${params.level}/${params.step}/sentences`}
+              message="No grammar points yet for this STEP."
+            />
+          )}
         </div>
 
         <div className="mt-2 flex flex-col gap-3">

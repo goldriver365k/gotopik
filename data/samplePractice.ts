@@ -6,7 +6,7 @@ export type PracticeQuestionType =
   | "listening";
 
 export type PracticeQuestionData = {
-  id: number;
+  id: string;
   type: PracticeQuestionType;
   question: string;
   passage?: string;
@@ -20,7 +20,7 @@ export type PracticeQuestionData = {
 // Reuses vocabulary, sentences, and grammar already introduced in this STEP.
 export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
   {
-    id: 1,
+    id: "L1-S1-P01",
     type: "vocabulary",
     question: '"학교"의 뜻은 무엇입니까?',
     options: ["School", "Friend", "Food", "House"],
@@ -39,7 +39,7 @@ export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
     },
   },
   {
-    id: 2,
+    id: "L1-S1-P02",
     type: "sentence",
     question: "빈칸에 알맞은 말을 고르세요.\n저는 학교에 ______.",
     options: ["가요", "먹어요", "만나요", "있어요"],
@@ -58,7 +58,7 @@ export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
     },
   },
   {
-    id: 3,
+    id: "L1-S1-P03",
     type: "grammar",
     question: "알맞은 문장을 고르세요.",
     options: [
@@ -82,7 +82,7 @@ export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
     },
   },
   {
-    id: 4,
+    id: "L1-S1-P04",
     type: "reading",
     passage: "저는 학생이에요. 아침에 학교에 가요.",
     question: "이 사람은 어디에 가요?",
@@ -102,7 +102,7 @@ export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
     },
   },
   {
-    id: 5,
+    id: "L1-S1-P05",
     type: "listening",
     audioText: "저는 친구와 밥을 먹어요.",
     question: "누구와 밥을 먹어요?",

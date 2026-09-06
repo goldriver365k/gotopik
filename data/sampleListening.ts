@@ -4,7 +4,7 @@ export type ListeningTranslation = {
 };
 
 export type ListeningQuestionData = {
-  id: number;
+  id: string;
   audioText: string;
   audioUrl: string | null;
   question: string;
@@ -17,7 +17,7 @@ export type ListeningQuestionData = {
 // Reuses vocabulary and the "-에 가요" pattern from WORDS / SENTENCES / GRAMMAR.
 export const SAMPLE_LISTENING: ListeningQuestionData[] = [
   {
-    id: 1,
+    id: "L1-S1-L01",
     audioText: "저는 학교에 가요.",
     audioUrl: null,
     question: "어디에 가요?",

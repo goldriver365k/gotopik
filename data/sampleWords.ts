@@ -1,5 +1,5 @@
 export type Word = {
-  id: number;
+  id: string;
   korean: string;
   partOfSpeech: string;
   translations: Record<string, string>;
@@ -11,7 +11,7 @@ export type Word = {
 // Development sample only — not the final TOPIK 1 curriculum.
 export const SAMPLE_WORDS: Word[] = [
   {
-    id: 1,
+    id: "L1-S1-W01",
     korean: "사람",
     partOfSpeech: "noun",
     translations: {
@@ -34,7 +34,7 @@ export const SAMPLE_WORDS: Word[] = [
     audioUrl: null,
   },
   {
-    id: 2,
+    id: "L1-S1-W02",
     korean: "학교",
     partOfSpeech: "noun",
     translations: {
@@ -57,7 +57,7 @@ export const SAMPLE_WORDS: Word[] = [
     audioUrl: null,
   },
   {
-    id: 3,
+    id: "L1-S1-W03",
     korean: "친구",
     partOfSpeech: "noun",
     translations: {
@@ -80,7 +80,7 @@ export const SAMPLE_WORDS: Word[] = [
     audioUrl: null,
   },
   {
-    id: 4,
+    id: "L1-S1-W04",
     korean: "먹다",
     partOfSpeech: "verb",
     translations: {
@@ -103,7 +103,7 @@ export const SAMPLE_WORDS: Word[] = [
     audioUrl: null,
   },
   {
-    id: 5,
+    id: "L1-S1-W05",
     korean: "가다",
     partOfSpeech: "verb",
     translations: {

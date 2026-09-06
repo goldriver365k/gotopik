@@ -9,23 +9,28 @@ import SecondaryButton from "@/components/SecondaryButton";
 import PrimaryButton from "@/components/PrimaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import PracticeQuestion from "@/components/PracticeQuestion";
-import { SAMPLE_PRACTICE } from "@/data/samplePractice";
+import ContentPending from "@/components/ContentPending";
+import { getStepContent } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
 
 export default function PracticePage() {
   const params = useParams<{ level: string; step: string }>();
+  const level = Number(params.level);
+  const step = Number(params.step);
   const lang = useLang();
-  useSaveProgress(Number(params.level), Number(params.step), "practice");
+  useSaveProgress(level, step, "practice");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
 
-  const total = SAMPLE_PRACTICE.length;
-  const currentQuestion = SAMPLE_PRACTICE[currentIndex];
+  const content = getStepContent(level, step);
+  const practiceQuestions = content?.practice ?? [];
+  const total = practiceQuestions.length;
+  const currentQuestion = practiceQuestions[currentIndex];
   const isLast = currentIndex === total - 1;
-  const accuracy = Math.round((score / total) * 100);
+  const accuracy = total > 0 ? Math.round((score / total) * 100) : 0;
 
   const handleAnswered = (isCorrect: boolean) => {
     if (isCorrect) setScore((s) => s + 1);
@@ -38,6 +43,23 @@ export default function PracticePage() {
       setCurrentIndex((i) => i + 1);
     }
   };
+
+  if (total === 0) {
+    return (
+      <>
+        <Header
+          title={`TOPIK ${params.level} · STEP ${params.step}`}
+          backHref={`/study/${params.level}/${params.step}/reading`}
+        />
+        <main className="flex flex-1 flex-col gap-5 px-5 py-6">
+          <ContentPending
+            backHref={`/study/${params.level}/${params.step}/reading`}
+            message="No practice questions yet for this STEP."
+          />
+        </main>
+      </>
+    );
+  }
 
   return (
     <>

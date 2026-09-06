@@ -9,10 +9,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import PencilCharacter from "@/components/PencilCharacter";
-import { SAMPLE_WORDS } from "@/data/sampleWords";
-import { SAMPLE_SENTENCES } from "@/data/sampleSentences";
-import { SAMPLE_GRAMMAR } from "@/data/sampleGrammar";
-import { SAMPLE_PRACTICE } from "@/data/samplePractice";
+import { getStepContent } from "@/lib/content";
 import { getLevel } from "@/lib/levels";
 import { markStepComplete, updateCurrentPosition } from "@/lib/progress";
 import { useLang } from "@/hooks/useLang";
@@ -25,7 +22,8 @@ export default function CompletePage() {
 
   const level = Number(params.level);
   const step = Number(params.step);
-  const total = Number(searchParams.get("total")) || SAMPLE_PRACTICE.length;
+  const content = getStepContent(level, step);
+  const total = Number(searchParams.get("total")) || content?.practice.length || 0;
   const score = Number(searchParams.get("score")) || 0;
   const accuracy = total > 0 ? Math.round((score / total) * 100) : 0;
 
@@ -65,15 +63,15 @@ export default function CompletePage() {
           <div className="mt-1 flex flex-col gap-1.5 text-sm text-foreground">
             <div className="flex items-center justify-between">
               <span className="text-muted">{t("sectionWords", lang)}</span>
-              <span className="font-semibold">{SAMPLE_WORDS.length}</span>
+              <span className="font-semibold">{content?.words.length ?? 0}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-muted">{t("sectionSentences", lang)}</span>
-              <span className="font-semibold">{SAMPLE_SENTENCES.length}</span>
+              <span className="font-semibold">{content?.sentences.length ?? 0}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-muted">{t("sectionGrammar", lang)}</span>
-              <span className="font-semibold">{SAMPLE_GRAMMAR.length}</span>
+              <span className="font-semibold">{content?.grammar.length ?? 0}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-muted">{t("practiceScore", lang)}</span>

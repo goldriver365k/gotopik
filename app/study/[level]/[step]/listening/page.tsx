@@ -7,15 +7,19 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import ListeningQuestion from "@/components/ListeningQuestion";
-import { SAMPLE_LISTENING } from "@/data/sampleListening";
+import ContentPending from "@/components/ContentPending";
+import { getStepContent } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
 
 export default function ListeningPage() {
   const params = useParams<{ level: string; step: string }>();
+  const level = Number(params.level);
+  const step = Number(params.step);
   const lang = useLang();
-  useSaveProgress(Number(params.level), Number(params.step), "listening");
+  useSaveProgress(level, step, "listening");
+  const content = getStepContent(level, step);
 
   return (
     <>
@@ -32,9 +36,16 @@ export default function ListeningPage() {
         </div>
 
         <div className="flex flex-col gap-3">
-          {SAMPLE_LISTENING.map((question) => (
-            <ListeningQuestion key={question.id} data={question} lang={lang} />
-          ))}
+          {content && content.listening.length > 0 ? (
+            content.listening.map((question) => (
+              <ListeningQuestion key={question.id} data={question} lang={lang} />
+            ))
+          ) : (
+            <ContentPending
+              backHref={`/study/${params.level}/${params.step}/grammar`}
+              message="No listening questions yet for this STEP."
+            />
+          )}
         </div>
 
         <div className="mt-2 flex flex-col gap-3">
