@@ -54,6 +54,18 @@ export default function CompletePage() {
         ? "Good progress. Review weak areas and continue."
         : "More TOPIK 2 review is recommended.";
 
+  // STEP 16 is TOPIK 3's comprehensive review STEP. Same pattern as
+  // TOPIK 1's STEP 12 and TOPIK 2's STEP 14 above: an extra readiness
+  // note, never a gate — TOPIK 4 stays freely selectable whether or not
+  // this STEP is completed or passed.
+  const isTopik3Review = level === 3 && step === 16;
+  const topik3ReadinessMessage =
+    accuracy >= 80
+      ? "Ready to explore TOPIK 4"
+      : accuracy >= 60
+        ? "Good progress. Review some TOPIK 3 topics."
+        : "More TOPIK 3 review is recommended.";
+
   useEffect(() => {
     markStepComplete(level, step);
     updateCurrentPosition(level, step, "complete");
@@ -132,6 +144,18 @@ export default function CompletePage() {
           </Card>
         ) : null}
 
+        {isTopik3Review ? (
+          <Card className="flex flex-col gap-1 text-center">
+            <p className="text-sm font-bold text-mint-dark">TOPIK 3 Complete</p>
+            <p className="text-sm text-muted">
+              You&apos;ve reviewed the key skills from TOPIK 3.
+            </p>
+            <p className="mt-1 text-base font-bold text-foreground">
+              {topik3ReadinessMessage}
+            </p>
+          </Card>
+        ) : null}
+
         <div className="flex flex-col gap-2">
           <ProgressBar
             value={step}
@@ -157,6 +181,15 @@ export default function CompletePage() {
               </Link>
               <Link href={`/level/${params.level}`}>
                 <SecondaryButton fullWidth>Review TOPIK 2</SecondaryButton>
+              </Link>
+            </>
+          ) : isTopik3Review ? (
+            <>
+              <Link href="/level/4">
+                <PrimaryButton fullWidth>Try TOPIK 4</PrimaryButton>
+              </Link>
+              <Link href={`/level/${params.level}`}>
+                <SecondaryButton fullWidth>Review TOPIK 3</SecondaryButton>
               </Link>
             </>
           ) : (
