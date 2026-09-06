@@ -206,9 +206,49 @@ export const UI_TEXT = {
     en: "Practice", vi: "Luyện tập", zh: "练习", mn: "Дадлага", uz: "Mashq",
     ne: "अभ्यास", ja: "練習", th: "แบบฝึกหัด", id: "Latihan", ru: "Практика",
   },
+  sectionWriting: {
+    en: "Writing", vi: "Viết", zh: "写作", mn: "Бичих", uz: "Yozish",
+    ne: "लेखन", ja: "ライティング", th: "การเขียน", id: "Menulis", ru: "Письмо",
+  },
   sectionComplete: {
     en: "Complete", vi: "Hoàn thành", zh: "完成", mn: "Дуусгах", uz: "Yakunlash",
     ne: "पूरा", ja: "完了", th: "เสร็จสมบูรณ์", id: "Selesai", ru: "Завершено",
+  },
+
+  // Writing
+  writingPlaceholder: {
+    en: "Write your answer here...", vi: "Viết câu trả lời của bạn ở đây...",
+    zh: "在这里写下你的答案……", mn: "Хариултаа энд бичнэ үү...",
+    uz: "Javobingizni shu yerga yozing...", ne: "आफ्नो जवाफ यहाँ लेख्नुहोस्...",
+    ja: "ここに答えを書いてください…", th: "เขียนคำตอบของคุณที่นี่...",
+    id: "Tulis jawaban Anda di sini...", ru: "Напишите ваш ответ здесь...",
+  },
+  showSampleAnswer: {
+    en: "Show Sample Answer", vi: "Xem câu trả lời mẫu", zh: "查看示例答案",
+    mn: "Жишээ хариултыг харах", uz: "Namunaviy javobni ko‘rsatish",
+    ne: "नमूना जवाफ देखाउनुहोस्", ja: "模範解答を見る", th: "ดูตัวอย่างคำตอบ",
+    id: "Tampilkan Contoh Jawaban", ru: "Показать пример ответа",
+  },
+  hideSampleAnswer: {
+    en: "Hide Sample Answer", vi: "Ẩn câu trả lời mẫu", zh: "隐藏示例答案",
+    mn: "Жишээ хариултыг нуух", uz: "Namunaviy javobni yashirish",
+    ne: "नमूना जवाफ लुकाउनुहोस्", ja: "模範解答を隠す", th: "ซ่อนตัวอย่างคำตอบ",
+    id: "Sembunyikan Contoh Jawaban", ru: "Скрыть пример ответа",
+  },
+  sampleAnswerLabel: {
+    en: "Sample Answer", vi: "Câu trả lời mẫu", zh: "示例答案", mn: "Жишээ хариулт",
+    uz: "Namunaviy javob", ne: "नमूना जवाफ", ja: "模範解答", th: "ตัวอย่างคำตอบ",
+    id: "Contoh Jawaban", ru: "Пример ответа",
+  },
+  keyPointLabel: {
+    en: "Key Point", vi: "Điểm chính", zh: "要点", mn: "Гол санаа",
+    uz: "Asosiy nuqta", ne: "मुख्य बुँदा", ja: "ポイント", th: "ประเด็นสำคัญ",
+    id: "Poin Penting", ru: "Ключевой момент",
+  },
+  keywordsLabel: {
+    en: "Keywords", vi: "Từ khóa", zh: "关键词", mn: "Түлхүүр үг",
+    uz: "Kalit so‘zlar", ne: "मुख्य शब्दहरू", ja: "キーワード", th: "คำสำคัญ",
+    id: "Kata Kunci", ru: "Ключевые слова",
   },
 
   // Listening / Reading / Practice

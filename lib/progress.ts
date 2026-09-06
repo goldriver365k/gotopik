@@ -10,6 +10,7 @@ export type StepSection =
   | "grammar"
   | "listening"
   | "reading"
+  | "writing"
   | "practice"
   | "complete";
 
@@ -129,6 +130,7 @@ const VALID_SECTIONS: StepSection[] = [
   "grammar",
   "listening",
   "reading",
+  "writing",
   "practice",
   "complete",
 ];
@@ -139,6 +141,7 @@ const SECTION_LABEL_KEY: Record<StepSection, UiTextKey> = {
   grammar: "sectionGrammar",
   listening: "sectionListening",
   reading: "sectionReading",
+  writing: "sectionWriting",
   practice: "sectionPractice",
   complete: "sectionComplete",
 };

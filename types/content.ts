@@ -9,14 +9,18 @@ import type { ListeningQuestionData } from "@/data/sampleListening";
 import type { ReadingQuestionData } from "@/data/sampleReading";
 import type { PracticeQuestionData } from "@/data/samplePractice";
 
-// Placeholder shape for TOPIK 3+'s future Writing section. Intentionally
-// minimal — no Writing screen, component, or real content exists yet.
-// Defined now only so `writing?: WritingItem[]` can be added to
-// StepContent without a breaking change once Writing is actually built.
+// TOPIK 3+'s Writing section. Rule-based only (no AI grading): a prompt,
+// optional keywords, and an optional sample answer + key-point explanation
+// the learner checks their own writing against. Uses the same
+// `Record<string, string>` localization shape as every other content type
+// here (translations/meanings/explanations) — no new translation type.
 export interface WritingItem {
   id: string;
-  prompt: string;
-  translations: Record<string, string>;
+  type: "sentence-completion" | "sentence-order" | "keyword-writing" | "short-response";
+  prompt: Record<string, string>;
+  keywords?: string[];
+  sampleAnswer?: Record<string, string>;
+  explanation?: Record<string, string>;
 }
 
 export interface StepContent {

@@ -8,7 +8,7 @@ import SecondaryButton from "@/components/SecondaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import SentenceCard from "@/components/SentenceCard";
 import ContentPending from "@/components/ContentPending";
-import { getStepContent } from "@/lib/content";
+import { getStepContent, getSectionCount } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
@@ -32,7 +32,11 @@ export default function SentencesPage() {
           <h2 className="text-lg font-bold text-foreground">
             {t("sectionSentences", lang).toUpperCase()}
           </h2>
-          <ProgressBar value={2} max={6} label={t("learningStage", lang)} />
+          <ProgressBar
+            value={2}
+            max={getSectionCount(content)}
+            label={t("learningStage", lang)}
+          />
         </div>
 
         <div className="flex flex-col gap-3">

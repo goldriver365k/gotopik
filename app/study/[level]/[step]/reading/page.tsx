@@ -8,7 +8,7 @@ import SecondaryButton from "@/components/SecondaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import ReadingQuestion from "@/components/ReadingQuestion";
 import ContentPending from "@/components/ContentPending";
-import { getStepContent } from "@/lib/content";
+import { getStepContent, hasWriting, getSectionCount } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
@@ -20,6 +20,11 @@ export default function ReadingPage() {
   const lang = useLang();
   useSaveProgress(level, step, "reading");
   const content = getStepContent(level, step);
+  // TOPIK 1-2 never set `writing`, so this always resolves to practice for
+  // them — only a TOPIK 3+ STEP with real writing items inserts that stop.
+  const nextHref = hasWriting(content)
+    ? `/study/${params.level}/${params.step}/writing`
+    : `/study/${params.level}/${params.step}/practice`;
 
   return (
     <>
@@ -32,7 +37,11 @@ export default function ReadingPage() {
           <h2 className="text-lg font-bold text-foreground">
             {t("sectionReading", lang).toUpperCase()}
           </h2>
-          <ProgressBar value={5} max={6} label={t("learningStage", lang)} />
+          <ProgressBar
+            value={5}
+            max={getSectionCount(content)}
+            label={t("learningStage", lang)}
+          />
         </div>
 
         <div className="flex flex-col gap-3">
@@ -54,7 +63,7 @@ export default function ReadingPage() {
               {t("previous", lang)}
             </SecondaryButton>
           </Link>
-          <Link href={`/study/${params.level}/${params.step}/practice`}>
+          <Link href={nextHref}>
             <PrimaryButton fullWidth>{t("next", lang)}</PrimaryButton>
           </Link>
         </div>

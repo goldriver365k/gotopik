@@ -29,6 +29,9 @@ import { STEP_2_11 } from "@/data/content/level2/step11";
 import { STEP_2_12 } from "@/data/content/level2/step12";
 import { STEP_2_13 } from "@/data/content/level2/step13";
 import { STEP_2_14 } from "@/data/content/level2/step14";
+import { STEP_3_1 } from "@/data/content/level3/step01";
+import { STEP_3_2 } from "@/data/content/level3/step02";
+import { STEP_3_3 } from "@/data/content/level3/step03";
 
 // Keyed by "{level}-{step}". Add an entry here as new STEP files are
 // written — there is no fallback that auto-clones another STEP's content,
@@ -61,8 +64,23 @@ const STEP_CONTENT: Record<string, StepContent> = {
   "2-12": STEP_2_12,
   "2-13": STEP_2_13,
   "2-14": STEP_2_14,
+  "3-1": STEP_3_1,
+  "3-2": STEP_3_2,
+  "3-3": STEP_3_3,
 };
 
 export function getStepContent(level: number, step: number): StepContent | null {
   return STEP_CONTENT[`${level}-${step}`] ?? null;
+}
+
+// TOPIK 1-2 never set `writing` (all 26 STEP files omit it) and get the
+// original 6-section flow. TOPIK 3+ STEPs that do provide writing items
+// insert a WRITING section between READING and PRACTICE. Both branches
+// share this so the study screens never hardcode which flow a STEP uses.
+export function hasWriting(content: StepContent | null): boolean {
+  return !!content?.writing && content.writing.length > 0;
+}
+
+export function getSectionCount(content: StepContent | null): number {
+  return hasWriting(content) ? 7 : 6;
 }

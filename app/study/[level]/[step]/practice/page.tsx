@@ -10,7 +10,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import ProgressBar from "@/components/ProgressBar";
 import PracticeQuestion from "@/components/PracticeQuestion";
 import ContentPending from "@/components/ContentPending";
-import { getStepContent } from "@/lib/content";
+import { getStepContent, hasWriting, getSectionCount } from "@/lib/content";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 import { useSaveProgress } from "@/hooks/useSaveProgress";
@@ -31,6 +31,12 @@ export default function PracticePage() {
   const currentQuestion = practiceQuestions[currentIndex];
   const isLast = currentIndex === total - 1;
   const accuracy = total > 0 ? Math.round((score / total) * 100) : 0;
+  // TOPIK 1-2 never set `writing`, so this always resolves to reading for
+  // them — only a TOPIK 3+ STEP with real writing items inserts that stop.
+  const previousHref = hasWriting(content)
+    ? `/study/${params.level}/${params.step}/writing`
+    : `/study/${params.level}/${params.step}/reading`;
+  const sectionCount = getSectionCount(content);
 
   const handleAnswered = (isCorrect: boolean) => {
     if (isCorrect) setScore((s) => s + 1);
@@ -49,11 +55,11 @@ export default function PracticePage() {
       <>
         <Header
           title={`TOPIK ${params.level} · STEP ${params.step}`}
-          backHref={`/study/${params.level}/${params.step}/reading`}
+          backHref={previousHref}
         />
         <main className="flex flex-1 flex-col gap-5 px-5 py-6">
           <ContentPending
-            backHref={`/study/${params.level}/${params.step}/reading`}
+            backHref={previousHref}
             message="No practice questions yet for this STEP."
           />
         </main>
@@ -65,14 +71,18 @@ export default function PracticePage() {
     <>
       <Header
         title={`TOPIK ${params.level} · STEP ${params.step}`}
-        backHref={`/study/${params.level}/${params.step}/reading`}
+        backHref={previousHref}
       />
       <main className="flex flex-1 flex-col gap-5 px-5 py-6">
         <div className="flex flex-col gap-2">
           <h2 className="text-lg font-bold text-foreground">
             {t("sectionPractice", lang).toUpperCase()}
           </h2>
-          <ProgressBar value={6} max={6} label={t("learningStage", lang)} />
+          <ProgressBar
+            value={sectionCount}
+            max={sectionCount}
+            label={t("learningStage", lang)}
+          />
         </div>
 
         {finished ? (
@@ -119,7 +129,7 @@ export default function PracticePage() {
               onNext={handleNext}
             />
 
-            <Link href={`/study/${params.level}/${params.step}/reading`}>
+            <Link href={previousHref}>
               <SecondaryButton fullWidth>
                 {t("previous", lang)}
               </SecondaryButton>
