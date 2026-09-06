@@ -23,3 +23,18 @@ export function getSavedSelfLevel(): string | null {
   if (typeof window === "undefined") return null;
   return localStorage.getItem(SELF_LEVEL_STORAGE_KEY);
 }
+
+// Short display label for screens (like Level Profile) that show the raw
+// selfLevel value back to the user instead of its full option sentence.
+const SELF_LEVEL_SHORT_LABELS: Record<string, string> = {
+  beginner: "Just Starting",
+  basic: "Basic",
+  everyday: "Everyday",
+  intermediate: "Intermediate",
+  topik_experience: "TOPIK Experience",
+  not_sure: "Not Sure",
+};
+
+export function getSelfLevelShortLabel(value: string): string {
+  return SELF_LEVEL_SHORT_LABELS[value] ?? value;
+}

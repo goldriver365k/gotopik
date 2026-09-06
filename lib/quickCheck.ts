@@ -78,3 +78,36 @@ export function saveQuickCheckResult(result: QuickCheckResult): void {
     // Storage unavailable or full — fail silently, nothing to recover here.
   }
 }
+
+export function getQuickCheckResult(): QuickCheckResult | null {
+  if (typeof window === "undefined") return null;
+
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+
+    const parsed = JSON.parse(raw);
+    if (
+      typeof parsed.score !== "number" ||
+      typeof parsed.total !== "number" ||
+      typeof parsed.estimatedLevel !== "number"
+    ) {
+      return null;
+    }
+
+    return {
+      score: parsed.score,
+      total: parsed.total,
+      estimatedLevel: parsed.estimatedLevel,
+      scores: {
+        vocabulary: Number(parsed.scores?.vocabulary) || 0,
+        grammar: Number(parsed.scores?.grammar) || 0,
+        reading: Number(parsed.scores?.reading) || 0,
+        listening: Number(parsed.scores?.listening) || 0,
+      },
+      completedAt: typeof parsed.completedAt === "string" ? parsed.completedAt : "",
+    };
+  } catch {
+    return null;
+  }
+}

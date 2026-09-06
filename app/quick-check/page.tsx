@@ -32,7 +32,7 @@ export default function QuickCheckPage() {
     if (isLast) {
       const result = calculateQuickCheckResult(selections);
       saveQuickCheckResult(result);
-      router.push("/home");
+      router.push("/level-profile");
     } else {
       setCurrentIndex((i) => i + 1);
     }
