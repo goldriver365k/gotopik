@@ -2,6 +2,9 @@
 // Real STEP content, independent of TOPIK1 and TOPIK2 STEP1-9's data files.
 // 시작하다, 끝나다, 바쁘다 already exist as "new" — recorded here with
 // status "review", not re-created as new.
+// QA fix (Stage 21): -고 있다 was already introduced as core grammar in
+// STEP 1 — relabeled here as "-고 있다 (복습)" instead of a second new
+// introduction; 동안 remains this STEP's one genuinely new pattern.
 import type { StepContent } from "@/types/content";
 import type { Word } from "@/data/sampleWords";
 import type { Sentence } from "@/data/sampleSentences";
@@ -30,7 +33,7 @@ const WORDS: Word[] = [
 ];
 
 const SENTENCES: Sentence[] = [
-  { id: "L2-S10-S01", korean: "지금 회의를 하고 있어요.", translations: { en: "I'm having a meeting right now." }, keyExpression: "-고 있다", relatedWords: ["지금", "회의"], audioUrl: null },
+  { id: "L2-S10-S01", korean: "지금 회의를 하고 있어요.", translations: { en: "I'm having a meeting right now." }, keyExpression: "-고 있다", relatedWords: ["회의"], audioUrl: null },
   { id: "L2-S10-S02", korean: "저는 회의 동안 자료를 확인해요.", translations: { en: "I check the materials during the meeting." }, keyExpression: "동안", relatedWords: ["회의", "자료", "확인하다"], audioUrl: null },
   { id: "L2-S10-S03", korean: "저는 아침에 출근해서 저녁에 퇴근해요.", translations: { en: "I go to work in the morning and leave work in the evening." }, keyExpression: "-아서/어서", relatedWords: ["출근하다", "퇴근하다"], audioUrl: null },
   { id: "L2-S10-S04", korean: "수업이 끝난 후에 과제를 해요.", translations: { en: "I do my assignment after class ends." }, keyExpression: "-(으)ㄴ 후에", relatedWords: ["수업", "끝나다", "과제"], audioUrl: null },
@@ -41,10 +44,10 @@ const SENTENCES: Sentence[] = [
 const GRAMMAR: Grammar[] = [
   {
     id: "L2-S10-G01",
-    pattern: "-고 있다",
-    meanings: { en: "to be doing (an ongoing action)" },
+    pattern: "-고 있다 (복습)",
+    meanings: { en: "to be doing (ongoing action, review)" },
     explanations: {
-      en: "Attach -고 있다 to a verb stem to describe an action in progress.",
+      en: "Keep using -고 있다 to describe an action in progress, now at the office.",
     },
     examples: [
       { korean: "지금 회의를 하고 있어요.", translations: { en: "I'm having a meeting right now." } },
@@ -80,8 +83,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "저는 아침 아홉 시에 출근해서 저녁 여섯 시에 퇴근해요.",
     audioUrl: null,
     question: "언제 퇴근합니까?",
-    options: ["아침 아홉 시", "저녁 여섯 시", "점심 열두 시", "밤 열 시"],
-    correctAnswer: 1,
+    options: ["아침 아홉 시", "밤 열 시", "점심 열두 시", "저녁 여섯 시"],
+    correctAnswer: 3,
     translations: { en: { question: "When do they leave work?", explanation: "The sentence says they leave work at six in the evening, so the correct answer is 저녁 여섯 시." } },
   },
   {

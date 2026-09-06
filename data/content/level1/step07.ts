@@ -66,8 +66,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "이 신발은 삼만 원이에요.",
     audioUrl: null,
     question: "신발은 얼마예요?",
-    options: ["이만 원", "삼만 원", "사만 원", "오만 원"],
-    correctAnswer: 1,
+    options: ["이만 원", "오만 원", "사만 원", "삼만 원"],
+    correctAnswer: 3,
     translations: { en: { question: "How much are the shoes?", explanation: 'The sentence says "30,000 won," so the correct answer is 삼만 원.' } },
   },
   {

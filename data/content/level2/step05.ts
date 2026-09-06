@@ -81,8 +81,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "사거리에서 오른쪽으로 도세요.",
     audioUrl: null,
     question: "어디에서 돌아야 합니까?",
-    options: ["역", "사거리", "정류장", "은행"],
-    correctAnswer: 1,
+    options: ["역", "정류장", "사거리", "은행"],
+    correctAnswer: 2,
     translations: { en: { question: "Where should they turn?", explanation: 'The sentence says "at the intersection," so the correct answer is 사거리.' } },
   },
   {
@@ -101,8 +101,8 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S5-R01",
     passage: "학교 근처에 식당이 있어요.\n식당은 은행 맞은편에 있어요.",
     question: "식당은 어디에 있습니까?",
-    options: ["학교 안", "은행 맞은편", "역 근처", "사거리 옆"],
-    correctAnswer: 1,
+    options: ["학교 안", "역 근처", "은행 맞은편", "사거리 옆"],
+    correctAnswer: 2,
     translations: { en: { question: "Where is the restaurant?", explanation: 'The passage says it is across from the bank, so the correct answer is 은행 맞은편.' } },
   },
   {
@@ -124,15 +124,15 @@ const READING: ReadingQuestionData[] = [
 ];
 
 const PRACTICE: PracticeQuestionData[] = [
-  { id: "L2-S5-P01", type: "vocabulary", question: '"정류장"의 뜻은 무엇입니까?', options: ["Bus stop", "Intersection", "Traffic light", "Station"], correctAnswer: 0, explanation: { en: "정류장 means bus stop." } },
+  { id: "L2-S5-P01", type: "vocabulary", question: '"정류장"의 뜻은 무엇입니까?', options: ["Station", "Intersection", "Traffic light", "Bus stop"], correctAnswer: 3, explanation: { en: "정류장 means bus stop." } },
   { id: "L2-S5-P02", type: "vocabulary", question: '"근처"의 뜻은 무엇입니까?', options: ["Far", "Nearby", "Across", "Straight"], correctAnswer: 1, explanation: { en: "근처 means nearby." } },
   { id: "L2-S5-P03", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n길을 건넌 ______ 직진하세요.", options: ["전에", "고", "후에", "려고"], correctAnswer: 2, explanation: { en: "-(으)ㄴ 후에 means 'after': 건넌 후에." } },
   { id: "L2-S5-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n사거리에서 오른쪽으로 ______.", options: ["돌아요", "돌았어요", "돌 거예요", "도세요"], correctAnswer: 3, explanation: { en: "-(으)세요 makes a polite request: 도세요." } },
-  { id: "L2-S5-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n학교 ______에 식당이 있어요.", options: ["근처", "방향", "출발", "도착"], correctAnswer: 0, explanation: { en: "근처 means nearby." } },
+  { id: "L2-S5-P05", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n학교 ______에 식당이 있어요.", options: ["도착", "방향", "출발", "근처"], correctAnswer: 3, explanation: { en: "근처 means nearby." } },
   { id: "L2-S5-P06", type: "sentence", question: "버스에서 내려야 할 때 하는 말은?", options: ["어디예요?", "여기에서 내려 주세요", "얼마예요?", "안녕하세요"], correctAnswer: 1, explanation: { en: "여기에서 내려 주세요 asks to get off here." } },
   { id: "L2-S5-P07", type: "vocabulary", question: "지하철에서 다른 노선으로 바꿀 때 하는 것은?", options: ["내려요", "기다려요", "갈아타요", "건너요"], correctAnswer: 2, explanation: { en: "갈아타요 means to transfer." } },
   { id: "L2-S5-P08", type: "listening", audioText: "사거리에서 오른쪽으로 도세요.", question: "어디에서 돌아야 합니까?", options: ["역", "정류장", "은행", "사거리"], correctAnswer: 3, explanation: { en: 'The sentence says "at the intersection," so the answer is 사거리.' } },
-  { id: "L2-S5-P09", type: "reading", passage: "은행은 학교 맞은편에 있어요.", question: "은행은 어디에 있습니까?", options: ["학교 맞은편", "학교 안", "학교 뒤", "학교 옆"], correctAnswer: 0, explanation: { en: 'The passage says it is across from the school, so the answer is 학교 맞은편.' } },
+  { id: "L2-S5-P09", type: "reading", passage: "은행은 학교 맞은편에 있어요.", question: "은행은 어디에 있습니까?", options: ["학교 옆", "학교 안", "학교 뒤", "학교 맞은편"], correctAnswer: 3, explanation: { en: 'The passage says it is across from the school, so the answer is 학교 맞은편.' } },
   { id: "L2-S5-P10", type: "reading", passage: "저는 역 근처에 살아요.", question: "저는 어디에 삽니까?", options: ["학교 근처", "역 근처", "은행 근처", "회사 근처"], correctAnswer: 1, explanation: { en: 'The passage says "near the station," so the answer is 역 근처.' } },
 ];
 

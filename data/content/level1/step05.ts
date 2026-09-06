@@ -252,8 +252,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "수업은 아홉 시에 시작해요.",
     audioUrl: null,
     question: "수업은 언제 시작합니까?",
-    options: ["여덟 시", "아홉 시", "열 시", "일곱 시"],
-    correctAnswer: 1,
+    options: ["여덟 시", "일곱 시", "열 시", "아홉 시"],
+    correctAnswer: 3,
     translations: {
       en: {
         question: "When does class start?",

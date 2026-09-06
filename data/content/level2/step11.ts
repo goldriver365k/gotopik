@@ -73,8 +73,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "여기에서 인터넷으로 신청할 수 있어요.",
     audioUrl: null,
     question: "어떻게 신청할 수 있습니까?",
-    options: ["전화로", "인터넷으로", "우편으로", "직접 방문해서"],
-    correctAnswer: 1,
+    options: ["전화로", "직접 방문해서", "우편으로", "인터넷으로"],
+    correctAnswer: 3,
     translations: { en: { question: "How can you apply?", explanation: 'The sentence says "online," so the correct answer is 인터넷으로.' } },
   },
   {
@@ -82,8 +82,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "번호표를 받고 창구 앞에서 기다리세요.",
     audioUrl: null,
     question: "무엇을 먼저 해야 합니까?",
-    options: ["서류 작성", "번호표 받기", "이름 쓰기", "돈 내기"],
-    correctAnswer: 1,
+    options: ["서류 작성", "돈 내기", "이름 쓰기", "번호표 받기"],
+    correctAnswer: 3,
     translations: { en: { question: "What should be done first?", explanation: 'The sentence says "take a number ticket," so the correct answer is 번호표 받기.' } },
   },
   {

@@ -87,8 +87,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S9-R01",
     passage: "민수 씨, 우리 토요일에 만나요.\n오후 세 시, 학교 앞에서 만나요.",
     question: "언제 만납니까?",
-    options: ["금요일", "토요일", "일요일", "월요일"],
-    correctAnswer: 1,
+    options: ["금요일", "월요일", "일요일", "토요일"],
+    correctAnswer: 3,
     translations: { en: { question: "When do they meet?", explanation: 'The note says "let\'s meet on Saturday," so the answer is 토요일.' } },
   },
   {

@@ -4,6 +4,9 @@
 // "review". 초대 (noun) is a distinct word from 초대하다 (verb, already
 // "new" in TOPIK1 STEP9) and is treated as new here, matching the existing
 // noun/verb-pair precedent (e.g. 약속/약속하다).
+// QA fix (Stage 21): -아/어 보다 was already introduced as core grammar in
+// STEP 7 — relabeled here as "-아/어 보다 (복습)" instead of a second new
+// introduction; 때 remains this STEP's one genuinely new pattern.
 import type { StepContent } from "@/types/content";
 import type { Word } from "@/data/sampleWords";
 import type { Sentence } from "@/data/sampleSentences";
@@ -44,10 +47,10 @@ const SENTENCES: Sentence[] = [
 const GRAMMAR: Grammar[] = [
   {
     id: "L2-S12-G01",
-    pattern: "-아/어 보다",
-    meanings: { en: "to try doing something" },
+    pattern: "-아/어 보다 (복습)",
+    meanings: { en: "to try doing something (review)" },
     explanations: {
-      en: "Attach -아/어 보다 to a verb stem to talk about trying or having tried something.",
+      en: "Keep using -아/어 보다 to talk about trying or having tried something, now for festivals and food.",
     },
     examples: [
       { korean: "한국 음식을 먹어 봤어요.", translations: { en: "I've tried Korean food." } },

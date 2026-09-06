@@ -67,7 +67,7 @@ const SENTENCES: Sentence[] = [
   { id: "L2-S14-S04", korean: "건강을 위해서 매일 운동해야 해요.", translations: { en: "You should exercise every day for your health." }, keyExpression: "-아/어야 하다", relatedWords: ["건강", "매일", "운동"], audioUrl: null },
   { id: "L2-S14-S05", korean: "이 가방이 저 가방보다 싸서 사고 싶어요.", translations: { en: "This bag is cheaper than that one, so I want to buy it." }, keyExpression: "-보다", relatedWords: ["가방", "싸다", "사다"], audioUrl: null },
   { id: "L2-S14-S06", korean: "지금 회사에서 회의를 하고 있어요.", translations: { en: "I'm having a meeting at the office right now." }, keyExpression: "-고 있다", relatedWords: ["회사", "회의"], audioUrl: null },
-  { id: "L2-S14-S07", korean: "여기에서는 인터넷으로 신청할 수 있어요.", translations: { en: "You can apply online here." }, keyExpression: "-(으)ㄹ 수 있다", relatedWords: ["인터넷", "신청하다"], audioUrl: null },
+  { id: "L2-S14-S07", korean: "여기에서는 인터넷으로 신청할 수 있어요.", translations: { en: "You can apply online here." }, keyExpression: "-(으)ㄹ 수 있다", relatedWords: ["신청하다"], audioUrl: null },
   { id: "L2-S14-S08", korean: "비 때문에 행사 시간이 변경됐어요.", translations: { en: "The event time changed because of rain." }, keyExpression: "때문에", relatedWords: ["행사", "변경"], audioUrl: null },
 ];
 

@@ -2,6 +2,9 @@
 // Real STEP 4 curriculum content, independent of STEP 1-3's data files.
 // 먹다 (W11) is a deliberate review word from STEP 1 (L1-S1-W04), recarded
 // here in the food theme — status "review", per docs/content-rules.md.
+// QA fix (Stage 21): 을/를 was already introduced as core grammar in
+// STEP 3 — relabeled here as "을/를 (복습)" instead of a second new
+// introduction; -아요/어요 remains this STEP's one genuinely new pattern.
 import type { StepContent } from "@/types/content";
 import type { Word } from "@/data/sampleWords";
 import type { Sentence } from "@/data/sampleSentences";
@@ -209,10 +212,10 @@ const SENTENCES: Sentence[] = [
 const GRAMMAR: Grammar[] = [
   {
     id: "L1-S4-G01",
-    pattern: "을/를",
-    meanings: { en: "object marker" },
+    pattern: "을/를 (복습)",
+    meanings: { en: "object marker (review)" },
     explanations: {
-      en: "Use 을/를 after the object of a verb — 을 after a consonant, 를 after a vowel.",
+      en: "Keep using 을/를 after the object of a verb — 을 after a consonant, 를 after a vowel.",
     },
     examples: [
       { korean: "밥을 먹어요.", translations: { en: "I eat a meal." } },
@@ -271,8 +274,8 @@ const READING: ReadingQuestionData[] = [
     id: "L1-S4-R01",
     passage: "저는 식당에 가요.\n저는 밥과 고기를 먹어요.",
     question: "저는 무엇을 먹습니까?",
-    options: ["과일", "밥과 고기", "커피", "김치"],
-    correctAnswer: 1,
+    options: ["밥과 고기", "과일", "커피", "김치"],
+    correctAnswer: 0,
     translations: {
       en: {
         question: "What do they eat?",

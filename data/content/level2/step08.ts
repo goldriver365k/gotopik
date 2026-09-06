@@ -74,8 +74,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "채소를 먼저 씻어야 해요.",
     audioUrl: null,
     question: "채소로 무엇을 먼저 해야 합니까?",
-    options: ["잘라요", "씻어요", "넣어요", "끓여요"],
-    correctAnswer: 1,
+    options: ["잘라요", "끓여요", "넣어요", "씻어요"],
+    correctAnswer: 3,
     translations: { en: { question: "What should be done to the vegetables first?", explanation: 'The sentence says "wash first," so the correct answer is 씻어요.' } },
   },
   {
@@ -92,8 +92,8 @@ const LISTENING: ListeningQuestionData[] = [
     audioText: "냄비에 물을 넣고 끓여요. 그 다음에 채소를 넣어요.",
     audioUrl: null,
     question: "물을 끓인 후에 무엇을 넣습니까?",
-    options: ["고기", "채소", "소금", "기름"],
-    correctAnswer: 1,
+    options: ["고기", "기름", "소금", "채소"],
+    correctAnswer: 3,
     translations: { en: { question: "What is added after boiling the water?", explanation: 'The sentence says "next, add vegetables," so the correct answer is 채소.' } },
   },
 ];
@@ -103,8 +103,8 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S8-R01",
     passage: "저는 요리를 좋아해요.\n오늘은 채소 요리를 만들어요.",
     question: "오늘 무슨 요리를 만듭니까?",
-    options: ["고기 요리", "채소 요리", "생선 요리", "면 요리"],
-    correctAnswer: 1,
+    options: ["고기 요리", "면 요리", "생선 요리", "채소 요리"],
+    correctAnswer: 3,
     translations: { en: { question: "What dish are they making today?", explanation: 'The passage says a vegetable dish, so the correct answer is 채소 요리.' } },
   },
   {
@@ -119,8 +119,8 @@ const READING: ReadingQuestionData[] = [
     id: "L2-S8-R03",
     passage: "냄비에 물을 넣어요.\n소금을 조금 넣어요.\n물을 끓여요.\n그 다음에 채소를 넣어요.",
     question: "소금을 넣은 후에 무엇을 합니까?",
-    options: ["채소를 넣어요", "물을 끓여요", "고기를 잘라요", "기름을 넣어요"],
-    correctAnswer: 1,
+    options: ["채소를 넣어요", "기름을 넣어요", "고기를 잘라요", "물을 끓여요"],
+    correctAnswer: 3,
     translations: { en: { question: "What happens after adding salt?", explanation: 'The passage says they boil the water next, so the correct answer is 물을 끓여요.' } },
   },
 ];
