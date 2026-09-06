@@ -6,6 +6,11 @@ export type Word = {
   example: string;
   exampleTranslations: Record<string, string>;
   audioUrl: string | null;
+  // Optional: "new" for a STEP's own vocabulary, "review" when a word
+  // reused from an earlier STEP is listed again. Not read by WordCard yet —
+  // reserved for future spaced-review use. STEP 1's words predate this
+  // field and are left as-is.
+  status?: "new" | "review";
 };
 
 // Development sample only — not the final TOPIK 1 curriculum.
