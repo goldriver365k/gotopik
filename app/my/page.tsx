@@ -19,6 +19,10 @@ import {
   LANGUAGE_OPTIONS,
   LEARNING_LANGUAGE_STORAGE_KEY,
 } from "@/lib/languages";
+import { getSavedSelfLevel, getSelfLevelShortLabel } from "@/lib/selfLevel";
+import { getTopikHistory, type TopikHistory } from "@/lib/topikHistory";
+import { getQuickCheckResult, type QuickCheckResult } from "@/lib/quickCheck";
+import { getLevelProfile, type LevelProfile } from "@/lib/levelProfile";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 
@@ -31,6 +35,17 @@ type MyPageData = {
   completedStepsTotal: number;
   currentLevelTitle: string | null;
   currentStep: number | null;
+  selfLevelLabel: string | null;
+  topikHistory: TopikHistory;
+  quickCheckResult: QuickCheckResult | null;
+  levelProfile: LevelProfile | null;
+};
+
+const DEFAULT_TOPIK_HISTORY: TopikHistory = {
+  testType: null,
+  level: null,
+  score: null,
+  when: null,
 };
 
 const DEFAULT_DATA: MyPageData = {
@@ -40,6 +55,10 @@ const DEFAULT_DATA: MyPageData = {
   completedStepsTotal: 0,
   currentLevelTitle: null,
   currentStep: null,
+  selfLevelLabel: null,
+  topikHistory: DEFAULT_TOPIK_HISTORY,
+  quickCheckResult: null,
+  levelProfile: null,
 };
 
 export default function MyPage() {
@@ -66,6 +85,8 @@ export default function MyPage() {
         ? (getLevel(progress.currentLevel)?.title ?? null)
         : null;
 
+    const selfLevel = getSavedSelfLevel();
+
     // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing client-only localStorage data after hydration
     setData({
       languageLabel,
@@ -74,8 +95,20 @@ export default function MyPage() {
       completedStepsTotal: progress.completedSteps.length,
       currentLevelTitle,
       currentStep: progress.currentStep,
+      selfLevelLabel: selfLevel ? getSelfLevelShortLabel(selfLevel) : null,
+      topikHistory: getTopikHistory(),
+      quickCheckResult: getQuickCheckResult(),
+      levelProfile: getLevelProfile(),
     });
   }, []);
+
+  // Full Level Test result outranks Quick Check as the more thorough,
+  // more recently-taken-on-purpose estimate; if neither exists, hide it.
+  const estimatedLevel = data.diagnosticResult
+    ? { level: data.diagnosticResult.estimatedLevel, source: "From Level Test" }
+    : data.quickCheckResult
+      ? { level: data.quickCheckResult.estimatedLevel, source: "From Quick Check" }
+      : null;
 
   return (
     <>
@@ -93,10 +126,75 @@ export default function MyPage() {
         </Card>
 
         <section className="flex flex-col gap-3">
-          <h2 className="text-lg font-bold text-foreground">
-            {t("continueLearning", lang)}
-          </h2>
+          <h2 className="text-lg font-bold text-foreground">Current Study</h2>
           <ContinueLearningCard />
+        </section>
+
+        <section className="flex flex-col gap-3">
+          <h2 className="text-lg font-bold text-foreground">My Level Profile</h2>
+          <Card className="flex flex-col gap-4">
+            {data.selfLevelLabel ? (
+              <div>
+                <p className="text-xs font-semibold text-muted">Self Assessment</p>
+                <p className="text-base font-bold text-foreground">
+                  {data.selfLevelLabel}
+                </p>
+              </div>
+            ) : null}
+
+            {data.topikHistory.level !== null ? (
+              <div>
+                <p className="text-xs font-semibold text-muted">Previous TOPIK</p>
+                <p className="text-base font-bold text-foreground">
+                  TOPIK {data.topikHistory.level}
+                </p>
+              </div>
+            ) : null}
+
+            {estimatedLevel ? (
+              <div>
+                <p className="text-xs font-semibold text-muted">Estimated Level</p>
+                <p className="text-base font-bold text-foreground">
+                  TOPIK {estimatedLevel.level}
+                </p>
+                <p className="text-xs text-muted">{estimatedLevel.source}</p>
+              </div>
+            ) : null}
+
+            {data.levelProfile ? (
+              <div>
+                <p className="text-xs font-semibold text-muted">Recommended Start</p>
+                <p className="text-base font-bold text-foreground">
+                  TOPIK {data.levelProfile.recommendedLevel} · STEP{" "}
+                  {data.levelProfile.recommendedStep}
+                </p>
+              </div>
+            ) : null}
+
+            {!data.selfLevelLabel &&
+            data.topikHistory.level === null &&
+            !estimatedLevel &&
+            !data.levelProfile ? (
+              <p className="text-sm text-muted">No level information yet.</p>
+            ) : null}
+          </Card>
+
+          <div className="flex flex-col gap-2">
+            <Link
+              href="/self-level"
+              className="text-center text-xs font-semibold text-mint-dark"
+            >
+              Update Self Assessment
+            </Link>
+            {data.topikHistory.level !== null ? (
+              <Link
+                href="/topik-history"
+                className="text-center text-xs font-semibold text-mint-dark"
+              >
+                Update TOPIK History
+              </Link>
+            ) : null}
+          </div>
         </section>
 
         <section className="flex flex-col gap-3">
@@ -149,11 +247,6 @@ export default function MyPage() {
               <>
                 <p className="text-2xl font-black text-foreground">
                   TOPIK {data.diagnosticResult.estimatedLevel}
-                </p>
-                <p className="text-sm text-muted">
-                  {t("recommendedWord", lang)}: TOPIK{" "}
-                  {data.diagnosticResult.estimatedLevel} · STEP{" "}
-                  {data.diagnosticResult.recommendedStep}
                 </p>
                 <Link href="/diagnostic">
                   <SecondaryButton fullWidth>
@@ -220,21 +313,16 @@ export default function MyPage() {
                 {t("changeWord", lang)}
               </Link>
             </div>
-            <div className="flex items-center justify-between py-3">
-              <span className="text-sm font-semibold text-muted">
-                {t("notifications", lang)}
-              </span>
-              <span className="text-xs text-muted">
-                {t("comingSoon", lang)}
-              </span>
-            </div>
             <div className="flex items-center justify-between pt-3">
-              <span className="text-sm font-semibold text-muted">
-                {t("account", lang)}
+              <span className="text-sm font-semibold text-foreground">
+                About TOPIK
               </span>
-              <span className="text-xs text-muted">
-                {t("availableAfterSignIn", lang)}
-              </span>
+              <Link
+                href="/about-topik"
+                className="text-xs font-semibold text-mint-dark"
+              >
+                View
+              </Link>
             </div>
           </Card>
         </section>
