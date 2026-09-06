@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #14181a;
+  --muted: #6b7280;
+  --mint: #12b886;
+  --mint-dark: #0ca678;
+  --mint-light: #e6f9f3;
+  --border: #e9ecef;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-mint: var(--mint);
+  --color-mint-dark: var(--mint-dark);
+  --color-mint-light: var(--mint-light);
+  --color-border: var(--border);
+  --font-sans:
+    "Apple SD Gothic Neo", "Pretendard", "Malgun Gothic", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@keyframes character-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-1.5deg);
+  }
+}
+
+.animate-character-float {
+  animation: character-float 3.6s ease-in-out infinite;
+}
