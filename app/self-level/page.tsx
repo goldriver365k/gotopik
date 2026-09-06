@@ -17,7 +17,7 @@ export default function SelfLevelPage() {
   const handleContinue = () => {
     if (!selected) return;
     localStorage.setItem(SELF_LEVEL_STORAGE_KEY, selected);
-    router.push(selected === "topik_experience" ? "/topik-history" : "/home");
+    router.push(selected === "topik_experience" ? "/topik-history" : "/quick-check");
   };
 
   return (

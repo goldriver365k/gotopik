@@ -75,7 +75,10 @@ export default function TopikHistoryPage() {
   );
   const [when, setWhen] = useState<TopikWhen | null>(saved.when);
 
-  const goHome = () => router.push("/home");
+  // Both Continue and Skip move on to Quick Check next — Quick Check has
+  // its own Skip straight to /home, so a user can still reach HOME without
+  // ever answering a question.
+  const goToQuickCheck = () => router.push("/quick-check");
 
   const handleContinue = () => {
     const trimmedScore = scoreInput.trim();
@@ -88,7 +91,7 @@ export default function TopikHistoryPage() {
       score,
       when,
     });
-    goHome();
+    goToQuickCheck();
   };
 
   return (
@@ -179,7 +182,7 @@ export default function TopikHistoryPage() {
         <PrimaryButton fullWidth onClick={handleContinue}>
           Continue
         </PrimaryButton>
-        <SecondaryButton fullWidth onClick={goHome}>
+        <SecondaryButton fullWidth onClick={goToQuickCheck}>
           Skip
         </SecondaryButton>
       </div>
