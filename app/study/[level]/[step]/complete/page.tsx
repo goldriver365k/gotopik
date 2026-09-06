@@ -32,6 +32,17 @@ export default function CompletePage() {
   const isLastStep = step >= stepCount;
   const nextStep = step + 1;
 
+  // STEP 12 is TOPIK 1's review STEP, not a normal lesson — its COMPLETE
+  // screen adds a short readiness note on top of the usual stats, but
+  // never blocks TOPIK 2: it stays freely selectable either way.
+  const isTopik1Review = level === 1 && step === 12;
+  const readinessMessage =
+    accuracy >= 80
+      ? "Ready to try TOPIK 2"
+      : accuracy >= 60
+        ? "Good progress. Review weak areas and continue."
+        : "Review TOPIK 1 again before moving on.";
+
   useEffect(() => {
     markStepComplete(level, step);
     updateCurrentPosition(level, step, "complete");
@@ -86,6 +97,18 @@ export default function CompletePage() {
           </div>
         </Card>
 
+        {isTopik1Review ? (
+          <Card className="flex flex-col gap-1 text-center">
+            <p className="text-sm font-bold text-mint-dark">TOPIK 1 Complete</p>
+            <p className="text-sm text-muted">
+              You&apos;ve reviewed the key skills from TOPIK 1.
+            </p>
+            <p className="mt-1 text-base font-bold text-foreground">
+              {readinessMessage}
+            </p>
+          </Card>
+        ) : null}
+
         <div className="flex flex-col gap-2">
           <ProgressBar
             value={step}
@@ -95,20 +118,33 @@ export default function CompletePage() {
         </div>
 
         <div className="mt-2 flex flex-col gap-3">
-          {isLastStep ? (
-            <Link href={`/level/${params.level}`}>
-              <PrimaryButton fullWidth>
-                {t("backToLevel", lang)}
-              </PrimaryButton>
-            </Link>
+          {isTopik1Review ? (
+            <>
+              <Link href="/level/2">
+                <PrimaryButton fullWidth>Continue to TOPIK 2</PrimaryButton>
+              </Link>
+              <Link href={`/level/${params.level}`}>
+                <SecondaryButton fullWidth>Review TOPIK 1</SecondaryButton>
+              </Link>
+            </>
           ) : (
-            <Link href={`/study/${params.level}/${nextStep}`}>
-              <PrimaryButton fullWidth>{t("nextStep", lang)}</PrimaryButton>
-            </Link>
+            <>
+              {isLastStep ? (
+                <Link href={`/level/${params.level}`}>
+                  <PrimaryButton fullWidth>
+                    {t("backToLevel", lang)}
+                  </PrimaryButton>
+                </Link>
+              ) : (
+                <Link href={`/study/${params.level}/${nextStep}`}>
+                  <PrimaryButton fullWidth>{t("nextStep", lang)}</PrimaryButton>
+                </Link>
+              )}
+              <Link href={`/study/${params.level}/${params.step}`}>
+                <SecondaryButton fullWidth>{t("review", lang)}</SecondaryButton>
+              </Link>
+            </>
           )}
-          <Link href={`/study/${params.level}/${params.step}`}>
-            <SecondaryButton fullWidth>{t("review", lang)}</SecondaryButton>
-          </Link>
           <Link href="/home">
             <SecondaryButton fullWidth>{t("homeButton", lang)}</SecondaryButton>
           </Link>
