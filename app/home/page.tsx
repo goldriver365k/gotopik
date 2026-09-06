@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import LevelCard from "@/components/LevelCard";
 import ContinueLearningCard from "@/components/ContinueLearningCard";
+import RecommendedCard from "@/components/RecommendedCard";
 import { LEVELS, type Level } from "@/lib/levels";
 import { getLevelProgressPercent } from "@/lib/progress";
 import { useLang } from "@/hooks/useLang";
@@ -42,6 +43,10 @@ export default function Home() {
       <main className="flex flex-1 flex-col gap-6 px-5 py-6">
         <section className="flex flex-col gap-3">
           <ContinueLearningCard />
+        </section>
+
+        <section className="flex flex-col gap-3">
+          <RecommendedCard />
         </section>
 
         <section id="levels" className="flex flex-col gap-3">

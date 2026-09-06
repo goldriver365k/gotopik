@@ -131,3 +131,33 @@ export function saveLevelProfile(profile: LevelProfile): void {
     // Storage unavailable or full — fail silently, nothing to recover here.
   }
 }
+
+export function getLevelProfile(): LevelProfile | null {
+  if (typeof window === "undefined") return null;
+
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+
+    const parsed = JSON.parse(raw);
+    if (
+      typeof parsed.recommendedLevel !== "number" ||
+      typeof parsed.recommendedStep !== "number"
+    ) {
+      return null;
+    }
+
+    return {
+      selfLevel: typeof parsed.selfLevel === "string" ? parsed.selfLevel : null,
+      previousTopikLevel:
+        typeof parsed.previousTopikLevel === "number" ? parsed.previousTopikLevel : null,
+      quickCheckLevel:
+        typeof parsed.quickCheckLevel === "number" ? parsed.quickCheckLevel : null,
+      recommendedLevel: parsed.recommendedLevel,
+      recommendedStep: parsed.recommendedStep,
+      updatedAt: typeof parsed.updatedAt === "string" ? parsed.updatedAt : "",
+    };
+  } catch {
+    return null;
+  }
+}
