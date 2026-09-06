@@ -15,6 +15,7 @@ import {
   getCompletedStepsForLevel,
   getLevelProgressPercent,
 } from "@/lib/progress";
+import { getLevelProfile, type LevelProfile } from "@/lib/levelProfile";
 import { useLang } from "@/hooks/useLang";
 import { t } from "@/lib/i18n";
 
@@ -33,13 +34,16 @@ export default function StudyPage() {
   const [currentLevelInfo, setCurrentLevelInfo] = useState<CurrentLevelInfo | null>(
     null,
   );
+  const [recommended, setRecommended] = useState<LevelProfile | null>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing client-only localStorage data after hydration
+    setRecommended(getLevelProfile());
+
     const progress = getProgress();
     const level = progress.currentLevel != null ? getLevel(progress.currentLevel) : null;
 
     if (!level) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing client-only localStorage data after hydration
       setCurrentLevelInfo(null);
       return;
     }
@@ -77,7 +81,7 @@ export default function StudyPage() {
           </h2>
           <Card>
             <p className="text-sm text-muted">
-              {t("reviewPlaceholder", lang)}
+              {currentLevelInfo ? t("reviewPlaceholder", lang) : "No review items yet."}
             </p>
           </Card>
         </section>
@@ -125,6 +129,13 @@ export default function StudyPage() {
               </Link>
             </Card>
           )}
+
+          {recommended ? (
+            <p className="text-xs text-muted">
+              Recommended: TOPIK {recommended.recommendedLevel} · STEP{" "}
+              {recommended.recommendedStep}
+            </p>
+          ) : null}
         </section>
 
         {currentLevelInfo ? (
