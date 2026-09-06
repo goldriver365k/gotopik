@@ -15,6 +15,7 @@ import { STEP_1_9 } from "@/data/content/level1/step09";
 import { STEP_1_10 } from "@/data/content/level1/step10";
 import { STEP_1_11 } from "@/data/content/level1/step11";
 import { STEP_1_12 } from "@/data/content/level1/step12";
+import { STEP_2_1 } from "@/data/content/level2/step01";
 
 // Keyed by "{level}-{step}". Add an entry here as new STEP files are
 // written — there is no fallback that auto-clones another STEP's content,
@@ -33,6 +34,7 @@ const STEP_CONTENT: Record<string, StepContent> = {
   "1-10": STEP_1_10,
   "1-11": STEP_1_11,
   "1-12": STEP_1_12,
+  "2-1": STEP_2_1,
 };
 
 export function getStepContent(level: number, step: number): StepContent | null {
