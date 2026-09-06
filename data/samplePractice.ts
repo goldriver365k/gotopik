@@ -23,8 +23,8 @@ export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
     id: "L1-S1-P01",
     type: "vocabulary",
     question: '"학교"의 뜻은 무엇입니까?',
-    options: ["School", "Friend", "Food", "House"],
-    correctAnswer: 0,
+    options: ["Friend", "School", "Food", "House"],
+    correctAnswer: 1,
     explanation: {
       en: "학교 means school.",
       vi: "학교 nghĩa là trường học.",
@@ -42,8 +42,8 @@ export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
     id: "L1-S1-P02",
     type: "sentence",
     question: "빈칸에 알맞은 말을 고르세요.\n저는 학교에 ______.",
-    options: ["가요", "먹어요", "만나요", "있어요"],
-    correctAnswer: 0,
+    options: ["먹어요", "만나요", "있어요", "가요"],
+    correctAnswer: 3,
     explanation: {
       en: '"가요" fits with -에 to mean going somewhere: 학교에 가요 (I go to school).',
       vi: '"가요" phù hợp với -에 để diễn tả việc đi đến đâu đó: 학교에 가요 (Tôi đi đến trường).',
@@ -86,8 +86,8 @@ export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
     type: "reading",
     passage: "저는 학생이에요. 아침에 학교에 가요.",
     question: "이 사람은 어디에 가요?",
-    options: ["학교", "회사", "식당", "집"],
-    correctAnswer: 0,
+    options: ["회사", "식당", "학교", "집"],
+    correctAnswer: 2,
     explanation: {
       en: "The passage says the person goes to school in the morning.",
       vi: "Đoạn văn nói người này đi đến trường vào buổi sáng.",
@@ -106,8 +106,8 @@ export const SAMPLE_PRACTICE: PracticeQuestionData[] = [
     type: "listening",
     audioText: "저는 친구와 밥을 먹어요.",
     question: "누구와 밥을 먹어요?",
-    options: ["친구", "선생님", "가족", "학생"],
-    correctAnswer: 0,
+    options: ["선생님", "친구", "가족", "학생"],
+    correctAnswer: 1,
     explanation: {
       en: 'The sentence says "I eat with my friend," so the answer is 친구 (friend).',
       vi: 'Câu nói "Tôi ăn cơm với bạn," nên đáp án là 친구 (bạn).',

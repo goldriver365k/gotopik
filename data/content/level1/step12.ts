@@ -171,7 +171,7 @@ const PRACTICE: PracticeQuestionData[] = [
   { id: "L1-S12-P03", type: "vocabulary", question: '"가격"의 뜻은 무엇입니까?', options: ["Weather", "Time", "Price", "Place"], correctAnswer: 2, explanation: { en: "가격 means price." } },
   { id: "L1-S12-P04", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n학교___ 가요.", options: ["가", "를", "와", "에"], correctAnswer: 3, explanation: { en: "에 marks a destination: 학교에 가요." } },
   { id: "L1-S12-P05", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n책___ 읽어요.", options: ["을", "이", "에서", "도"], correctAnswer: 0, explanation: { en: "을 marks the object: 책을 읽어요." } },
-  { id: "L1-S12-P06", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n오늘 학교에 ___ 가요.", options: ["도", "안", "를", "가"], correctAnswer: 1, explanation: { en: "안 negates the verb: 학교에 안 가요." } },
+  { id: "L1-S12-P06", type: "grammar", question: "빈칸에 알맞은 것을 고르세요.\n저는 커피를 ___ 마셔요.", options: ["도", "안", "를", "가"], correctAnswer: 1, explanation: { en: "안 negates the verb: 커피를 안 마셔요." } },
   { id: "L1-S12-P07", type: "sentence", question: "빈칸에 알맞은 것을 고르세요.\n저는 친구를 만나고 ______.", options: ["있어요", "좋아요", "싶어요", "가요"], correctAnswer: 2, explanation: { en: "-고 싶어요 says what you want to do: 만나고 싶어요." } },
   { id: "L1-S12-P08", type: "sentence", question: "가게에서 가격을 물을 때 무엇이라고 말합니까?", options: ["안녕하세요", "감사합니다", "맛있어요", "얼마예요?"], correctAnswer: 3, explanation: { en: "얼마예요? is used to ask the price of an item." } },
   { id: "L1-S12-P09", type: "listening", audioText: "저는 아침에 일어나요.", question: "언제 일어납니까?", options: ["아침", "저녁", "점심", "밤"], correctAnswer: 0, explanation: { en: 'The sentence says "in the morning," so the answer is 아침.' } },

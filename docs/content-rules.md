@@ -34,9 +34,9 @@ arithmetic, so this is safe to rely on everywhere.
   are the only values `WordCard` translates via `lib/i18n.ts`
   (`posNoun`/`posVerb`/`posAdjective`). Anything else (e.g. `"pronoun"`)
   displays untranslated as raw English text in every language. STEP 2's
-  `누구` (word 14) currently uses `"pronoun"` for this reason — treat it as
-  a known cosmetic gap, not a pattern to repeat; classify question words
-  like this as `"noun"` instead going forward.
+  `누구` used `"pronoun"` for this reason until the Stage 15 QA pass fixed
+  it to `"noun"` — classify question words like this as `"noun"` going
+  forward.
 - **`status`**: `"new"` for this STEP's own vocabulary, `"review"` when a
   word already taught in an earlier STEP is deliberately re-listed as its
   own Word card in this STEP. Not read by any component yet — reserved for

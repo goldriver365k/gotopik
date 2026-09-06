@@ -145,7 +145,7 @@ const WORDS: Word[] = [
   {
     id: "L1-S2-W14",
     korean: "누구",
-    partOfSpeech: "pronoun",
+    partOfSpeech: "noun",
     translations: { en: "who" },
     example: "저 사람은 누구예요?",
     exampleTranslations: { en: "Who is that person?" },
