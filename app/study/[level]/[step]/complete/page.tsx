@@ -43,6 +43,17 @@ export default function CompletePage() {
         ? "Good progress. Review weak areas and continue."
         : "Review TOPIK 1 again before moving on.";
 
+  // STEP 14 is TOPIK 2's comprehensive review STEP. Same pattern as TOPIK 1's
+  // STEP 12 above: an extra readiness note, never a gate — TOPIK 3 stays
+  // freely selectable whether or not this STEP is completed or passed.
+  const isTopik2Review = level === 2 && step === 14;
+  const topik2ReadinessMessage =
+    accuracy >= 80
+      ? "Ready to try TOPIK 3"
+      : accuracy >= 60
+        ? "Good progress. Review weak areas and continue."
+        : "More TOPIK 2 review is recommended.";
+
   useEffect(() => {
     markStepComplete(level, step);
     updateCurrentPosition(level, step, "complete");
@@ -109,6 +120,18 @@ export default function CompletePage() {
           </Card>
         ) : null}
 
+        {isTopik2Review ? (
+          <Card className="flex flex-col gap-1 text-center">
+            <p className="text-sm font-bold text-mint-dark">TOPIK 2 Complete</p>
+            <p className="text-sm text-muted">
+              You&apos;ve reviewed the key skills from TOPIK 2.
+            </p>
+            <p className="mt-1 text-base font-bold text-foreground">
+              {topik2ReadinessMessage}
+            </p>
+          </Card>
+        ) : null}
+
         <div className="flex flex-col gap-2">
           <ProgressBar
             value={step}
@@ -125,6 +148,15 @@ export default function CompletePage() {
               </Link>
               <Link href={`/level/${params.level}`}>
                 <SecondaryButton fullWidth>Review TOPIK 1</SecondaryButton>
+              </Link>
+            </>
+          ) : isTopik2Review ? (
+            <>
+              <Link href="/level/3">
+                <PrimaryButton fullWidth>Try TOPIK 3</PrimaryButton>
+              </Link>
+              <Link href={`/level/${params.level}`}>
+                <SecondaryButton fullWidth>Review TOPIK 2</SecondaryButton>
               </Link>
             </>
           ) : (
