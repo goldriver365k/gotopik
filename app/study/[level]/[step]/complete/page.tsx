@@ -66,6 +66,18 @@ export default function CompletePage() {
         ? "Good progress. Review some TOPIK 3 topics."
         : "More TOPIK 3 review is recommended.";
 
+  // STEP 18 is TOPIK 4's comprehensive review STEP. Same pattern as
+  // TOPIK 1's STEP 12, TOPIK 2's STEP 14, and TOPIK 3's STEP 16 above:
+  // an extra readiness note, never a gate — TOPIK 5 stays freely
+  // selectable whether or not this STEP is completed or passed.
+  const isTopik4Review = level === 4 && step === 18;
+  const topik4ReadinessMessage =
+    accuracy >= 80
+      ? "Ready to explore TOPIK 5"
+      : accuracy >= 60
+        ? "Good progress. Review a few TOPIK 4 topics."
+        : "More TOPIK 4 review is recommended.";
+
   useEffect(() => {
     markStepComplete(level, step);
     updateCurrentPosition(level, step, "complete");
@@ -156,6 +168,18 @@ export default function CompletePage() {
           </Card>
         ) : null}
 
+        {isTopik4Review ? (
+          <Card className="flex flex-col gap-1 text-center">
+            <p className="text-sm font-bold text-mint-dark">TOPIK 4 Review Complete</p>
+            <p className="text-sm text-muted">
+              You&apos;ve reviewed the key skills from TOPIK 4.
+            </p>
+            <p className="mt-1 text-base font-bold text-foreground">
+              {topik4ReadinessMessage}
+            </p>
+          </Card>
+        ) : null}
+
         <div className="flex flex-col gap-2">
           <ProgressBar
             value={step}
@@ -190,6 +214,15 @@ export default function CompletePage() {
               </Link>
               <Link href={`/level/${params.level}`}>
                 <SecondaryButton fullWidth>Review TOPIK 3</SecondaryButton>
+              </Link>
+            </>
+          ) : isTopik4Review ? (
+            <>
+              <Link href="/level/5">
+                <PrimaryButton fullWidth>Explore TOPIK 5</PrimaryButton>
+              </Link>
+              <Link href={`/level/${params.level}`}>
+                <SecondaryButton fullWidth>Review TOPIK 4</SecondaryButton>
               </Link>
             </>
           ) : (
